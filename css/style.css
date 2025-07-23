@@ -1,0 +1,326 @@
+@font-face 
+{
+    font-family: 'Aleo_Regular';
+    src: url('../fonts/Aleo-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: 'Aleo_Italic';
+    src : url('../fonts/Aleo-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+:root 
+{
+    --font-display: 'Aleo_Regular', sans-serif;
+    --font-display-italic: 'Aleo_Italic', sans-serif;
+    --dark-blue: #02385C;
+    --light-blue: #11C7F9;
+    --light-cyan: #11F9F9;
+    --dark-cyan: #11CFF9;
+    --light-sky: #71C6FF;
+    --black: #111111;
+    --white: #FFFFFF;
+}
+/* -------------------------Fonts------------------------------------------- */
+.font_display 
+{
+    font-family: var(--font-display);
+}
+.font_display_italic 
+{
+    font-family: var(--font-display-italic);
+}
+.font_display_bold 
+{
+    font-family: var(--font-display);
+    font-weight: bold;
+}
+.font_display_bold_italic 
+{
+    font-family: var(--font-display-italic);
+    font-weight: bold;
+}
+/* -------------------------End of Fonts------------------------------------------- */
+/* -------------------------Styles------------------------------------------------ */
+.text_center 
+{
+    text-align: center;
+}
+.text_left 
+{
+    text-align: left;
+}
+.text_right 
+{
+    text-align: right;
+}
+.text_justify 
+{
+    text-align: justify;
+}
+.relative 
+{
+    position: relative;
+}
+.absolute 
+{
+    position: absolute;
+}
+.fixed 
+{
+    position: fixed;
+}
+.sticky 
+{
+    position: sticky;
+}
+/* -------------------------End of Styles------------------------------------------- */
+/* -------------------------Display------------------------------------------- */
+.display_block 
+{
+    display: block;
+}
+.display_inline 
+{
+    display: inline;
+}
+.display-none 
+{
+    display: none;
+}
+.display_flex 
+{
+    display: flex;
+}
+/* .display_inline_flex 
+{
+    display: inline-flex;
+} */
+.display_grid 
+{
+    display: grid;
+}
+/* .display_inline_grid 
+{
+    display: inline-grid;
+} */
+.display_table 
+{
+    display: table;
+}
+.display_flex_column 
+{
+    display: flex;
+    flex-direction: column;
+}
+.display_flex_row 
+{
+    display: flex;
+    flex-direction: row;
+}
+.display_flex_column_reverse 
+{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.display_flex_row_reverse 
+{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* -------------------------End of Display------------------------------------------- */
+/* -------------------------Transition------------------------------------------- */
+.transition_all 
+{
+  transition: all 0.3s ease-in-out;
+}
+.transition_opacity 
+{
+  transition: opacity 0.3s ease-in-out;
+}
+.transition_transform 
+{
+  transition: transform 0.3s ease-in-out;
+}
+.transition_background 
+{
+  transition: background-color 0.3s ease-in-out;
+}
+.transition_color 
+{
+  transition: color 0.3s ease-in-out;
+}
+.transition_height 
+{
+  transition: height 0.3s ease-in-out;
+}
+.transition_width 
+{
+  transition: width 0.3s ease-in-out;
+}
+/* -------------------------End of Transition------------------------------------------- */
+/* -------------------------Colors------------------------------------------- */
+.bgcolor_darkblue
+{
+    background-color: var(--dark-blue);
+}
+.bgcolor_lightblue
+{
+    background-color: var(--light-blue);
+}
+.bgcolor_lightcyan
+{
+    background-color: var(--light-cyan);
+}
+.bgcolor_darkcyan
+{
+    background-color: var(--dark-cyan);
+}
+.bgcolor_lightsky
+{
+    background-color: var(--light-sky);
+}
+.bgcolor_black
+{
+    background-color: var(--black);
+}
+.bgcolor_white
+{
+    background-color: var(--white);
+}
+
+/* .bgcolor_gradient_down_darkblue-lightblue 
+{
+  background: linear-gradient(to bottom, var(--dark-blue), var(--light-blue));
+} */
+.bgcolor_gradient_down_darkblue-darkcyan 
+{
+  background: linear-gradient(to bottom, var(--dark-blue), var(--dark-cyan));
+} 
+.bgcolor_gradient_down_darkcyan-lightsky
+{
+  background: linear-gradient(to bottom, var(--dark-cyan), var(--light-sky));
+}
+/* -------------------------End of Colors------------------------------------------- */
+/* -------------------------Transform------------------------------------------- */
+.left-0 
+{
+    left: 0;
+}
+.left-50\[\%\] 
+{
+    left: 50%;
+}
+.left-100\[\%\] 
+{
+    left: 100%;
+}
+.right-0 
+{
+    right: 0;
+}
+.right-50\[\%\] 
+{
+    right: 50%;
+}
+.right-100\[\%\] 
+{
+    right: 100%;
+}
+.top-0 
+{
+    top: 0;
+}
+.top-50\[\%\] 
+{
+    top: 50%;
+}
+.top-100\[\%\] 
+{
+    top: 100%;
+}
+.bottom-0 
+{
+    bottom: 0;
+}
+.bottom-50\[\%\] 
+{
+    bottom: 50%;
+}
+.bottom-100\[\%\] 
+{
+    bottom: 100%;
+}
+.translate-x-50\[\%\] 
+{
+    transform: translateX(-50%);
+}
+.translate-y-50\[\%\]
+{
+    transform: translateY(-50%);
+}
+.translate-x-100\[\%\] 
+{
+    transform: translateX(-100%);
+}
+.translate-y-100\[\%\] 
+{
+    transform: translateY(-100%);
+}
+.translate-x-0 
+{
+    transform: translateX(0);
+}
+.translate-y-0 
+{
+    transform: translateY(0);
+}
+.rotate-90\[deg\] 
+{
+    transform: rotate(90deg);
+}
+.rotate-180\[deg\] 
+{
+    transform: rotate(180deg);
+} 
+.h-0
+{
+    height: 0;
+}
+.h-\[100\%\]
+{
+    height: 100%;
+}
+.h-\[50\%\]
+{
+    height: 50%;
+}
+.h-\[100px\]
+{
+    height: 100px;
+}
+.w-0
+{
+    width: 0;
+}
+.w-\[100\%\]
+{
+    width: 100%;
+}
+.w-\[50\%\]
+{
+    width: 50%;
+}
+.w-\[100px\]
+{
+    width: 100px;
+}
+
+
+
+/* -------------------------End of Transform------------------------------------------- */
