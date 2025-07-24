@@ -35,6 +35,9 @@
 *
 {
     color: var(--black);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 /* -------------------------ResetStyle--------------------------------------- */
 .reset_link
@@ -215,17 +218,45 @@
 {
     border-color: var(--white);
 }
-.border_width_1\[px\] 
+.border_1\[px\] 
 {
-    border-width: 1px;
+    border: 1px ;
 }
-.border_width_2\[px\] 
+.border_2\[px\] 
 {
-    border-width: 2px;
+    border: 2px ;
 }
-.border_width_4\[px\] 
+.border_4\[px\] 
 {
-    border-width: 4px;
+    border: 4px ;
+}
+.border_style_solid 
+{
+    border-style: solid;
+}
+.border_style_dashed 
+{
+    border-style: dashed;
+}
+.border_style_dotted 
+{
+    border-style: dotted;
+}
+.border_style_double 
+{
+    border-style: double;
+}
+.border_style_groove 
+{
+    border-style: groove;
+}
+.border_style_ridge 
+{
+    border-style: ridge;
+}
+.border_style_inset 
+{
+    border-style: inset;
 }
 
 /* -------------------------Display------------------------------------------- */
@@ -566,6 +597,10 @@
 {
     background-color: rgba(var(--black-rgb), 0.5);
 }
+.bgcolor_black_opacity_0_8
+{
+    background-color: rgba(var(--black-rgb), 0.8);
+}
 .bgcolor_white
 {
     background-color: var(--white);
@@ -644,6 +679,10 @@
 .right_15\[\px\] 
 {
     right: 15px;
+}
+.right_20\[\%\]
+{
+    right: 20%;
 }
 .right_25\[\px\]
 {
@@ -729,17 +768,27 @@
 {
     height: auto;
 }
-.h_\[100\%\]
+.h_100\[\%\]
 {
     height: 100%;
 }
-.h_\[50\%\]
+.h_50\[\%\]
 {
     height: 50%;
 }
 .h_100\[px\]
 {
     height: 100px;
+}
+.h_500\[px\]
+{
+    height: 500px;
+}
+/* .h_min_200\[px\] {
+    min-height: 200px;
+} */
+.h_min_200_500\[px\] {
+    min-height: clamp(200px, 100%, 500px);
 }
 .w_0
 {
@@ -753,9 +802,17 @@
 {
     width: 100%;
 }
+.w_40\[\%\]
+{
+    width: 40%;
+}
 .w_50\[\%\]
 {
     width: 50%;
+}
+.w_70\[\%\]
+{
+    width: 70%;
 }
 .w_75\[\%\]
 {
@@ -792,6 +849,22 @@
 .h_fit_content
 {
     height: fit-content;
+}
+.z_layer_0 
+{
+    z-index: 0;
+}
+.z_layer_1 
+{
+    z-index: 1;
+}
+.z_layer_2 
+{
+    z-index: 2;
+}
+.z_layer_3 
+{
+    z-index: 3;
 }
 /* -------------------------End of Transform------------------------------------------- */
 /* -------------------------Padding--------------------------------------------------- */
@@ -847,6 +920,30 @@
 {
    padding-left: 12px;
 }
+.padding_left_24\[px\] 
+{
+   padding-left: 24px;
+}
+.padding_left_60\[px\] 
+{
+   padding-left: 60px;
+}
+.padding_left_90\[px\] 
+{
+   padding-left: 90px;
+}
+.padding_left_10\[\%\] 
+{
+   padding-left: 10%;
+}
+.padding_left_30\[\%\] 
+{
+   padding-left: 30%;
+}
+.padding_left_60\[\%\] 
+{
+   padding-left: 60%;
+}
 .padding_right_0 
 {
     padding-right: 0;
@@ -875,6 +972,10 @@
 {
     padding-right: 80px;
 }
+.padding_right_20\[\%\]
+{
+    padding-right: 20%;
+}
 .padding_top_0 
 {
     padding-top: 0;
@@ -894,6 +995,14 @@
 .padding_top_8\[px\] 
 {
     padding-top: 8px;
+}
+.padding_top_16\[px\] 
+{
+    padding-top: 16px;
+}
+.padding_top_24\[px\] 
+{
+    padding-top: 24px;
 }
 .padding_bottom_0 
 {
@@ -980,6 +1089,26 @@
     padding-top: 16px;
     padding-bottom: 16px;
 }
+.padding_top_bottom_24\[px\] 
+{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.padding_top_bottom_32\[px\] 
+{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.padding_top_bottom_50\[px\] 
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.padding_top_bottom_500\[px\] 
+{
+    padding-top: 500px;
+    padding-bottom: 500px;
+}
 /* -------------------------End of Padding------------------------------------------- */
 /* -------------------------Margin-------------------------------------------------- */
 .margin_0 
@@ -1009,6 +1138,18 @@
 .margin_15\[px\] 
 {
     margin: 15px;
+}
+.margin_top_15\[px\] 
+{
+    margin-top: 15px;
+}
+.margin_top_30\[px\] 
+{
+    margin-top: 30px;
+}
+.margin_top_150\[px\] 
+{
+    margin-top: 150px;
 }
 .margin_top_bottom_0 
 {
@@ -1059,4 +1200,16 @@
 {
     margin-left: 8px;
     margin-right: 8px;
+}
+.margin_left_15\[\%\]
+{
+    margin-left: 15%;
+}
+.margin_left_5\[\%\]
+{
+    margin-left: 5%;
+}
+.margin_right_5\[\%\]
+{
+    margin-right: 5%;
 }
