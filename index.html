@@ -1,5 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RewriteSG</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/main.js" defer></script>
+    </head>
+    <body class = "bgcolor_darkblue">
+        <nav id = "sticky_navigation" class = "shadow_box sticky 
+            display_flex_row 
+            justify_content_space_around 
+            align_center
+            border_radius_4[px]
+            border_color_lightblue
+            bgcolor_lightblue
+            left_100[%] 
+            top_10[px]
+            w_75[%]">
+                <a href="index.html" class="reset_link font_display font_bold text_shadow_dark_strong
+                padding_top_bottom_16[px]
+                padding_left_12[px]">Home</a>
+                <a href="#weightlift_page" class="reset_link font_display font_bold">Weight-Lift</a>
+                <a href="#calisthenics_page" class="reset_link font_display font_bold">Calisthenics</a>
+                <a href="#whystayfit_page" class="reset_link font_display font_bold">Why Stay Fit</a>
+                <a href="#bulkcut_page" class="reset_link font_display font_bold">Bulk/Cut</a>
+                <a href="#bulkcut_page" class="reset_link font_display font_bold">
+                    <div class="reset_link font_display font_bold bgcolor_black text_color_white
+                    padding_10[px] border_radius_4[px] border_color_black">
+                        Routine Builder
+                    </div>
+                </a>
+            </nav>
+        <div id="index_page_1" class = "relative display_grid grid_template_columns_2fr grid_template_row_1fr">
+            <div id = "index_page_content" class="grid_column_1/2">
+                <div id = "credits_panel" class = "shadow_box bgcolor_lightsky_opacity_0_1
+                display_flex w_fit_content border_radius_4[px] h_fit_content">
+                    <p class = "font_display text_color_lightcyan padding_left_8[px] padding_right_80[px] font_size_20[px] margin_8[px]">by Hazwan</p>
+                </div>
+                <h1 class = "font_display text_color_white text_shadow_dark_strong font_size_60[px] font_type_normal">
+                    Fitness
+                </h1>
+                <p class = "font_display text_color_white text_shadow_dark_strong font_size_20[px] padding_left_right_16[px]">
+                    A simple website to help you stay fit, with routines and information on weight-lifting, calisthenics, and more.
+                </p>
+                <div id = "index_page_buttons" class = "display_flex_row justify_content_space_around align_center w_fit_content">
+                    <button id = "index_page_musclegroup_btn" class = "font_display font_size_15[px]
+                    text_color_black bgcolor_lightblue border_radius_4[px] border_color_black padding_left_right_24[px] padding_top_bottom_16[px]
+                    margin_15[px]">
+                        Muscle Groups
+                    </button>
+                    <button id = "index_page_routine_btn" class = "font_display font_size_15[px]
+                    text_color_lightcyan bgcolor_black border_radius_4[px] border_color_lightblue padding_left_right_24[px] padding_top_bottom_16[px]
+                    margin_15[px]">
+                        Routine Builder
+                    </button>
+                </div>
+            </div>
+          
+            <div id = "fitness_image_cropped" class = "overflow_hidden relative right_0 top_0 h_fit_content grid_column_2/3 w_500[px]">
+                <img src="images/fitness_image1.png" alt="Fitness Image" class="w_100[%] 
+                h_auto border_radius_4[px] object_fit_cover object_position_center">
+            </div>
+        </div>
+        <footer class = "text_center w_100[%] padding_top_bottom_16[px] font_display font_size_15[px] text_color_white border_width_4[px] bgcolor_black_opacity_0_8">
+                Scroll down to see more content.
+        </footer>
+    </body>
 </html>
