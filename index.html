@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js" defer></script>
     </head>
-    <body class= "relative bgcolor_darkblue">
+    <body class= "relative bgcolor_darkblue" id = "landing_page">
         <nav id = "sticky_navigation" class = "shadow_box sticky 
                 display_flex_row 
                 justify_content_space_around 
@@ -22,28 +22,28 @@
                     <a href="index.html" class="reset_link font_display font_bold text_shadow_dark_strong
                     padding_top_bottom_16[px]
                     padding_left_12[px]">Home</a>
-                    <a href="#weightlift_page" class="reset_link font_display font_bold">Weight-Lift</a>
-                    <a href="#calisthenics_page" class="reset_link font_display font_bold">Calisthenics</a>
-                    <a href="#whystayfit_page" class="reset_link font_display font_bold">Why Stay Fit</a>
-                    <a href="#bulkcut_page" class="reset_link font_display font_bold">Bulk/Cut</a>
+                    <a href="#whystayfit_content_grid" class="reset_link font_display font_bold">Why Stay Fit</a>
+                    <a href="subtopics.html?topic=weightlift" class="reset_link font_display font_bold">Weight-Lift</a>
+                    <a href="subtopics.html?topic=calisthenics" class="reset_link font_display font_bold">Calisthenics</a>
+                    <a href="subtopics.html?topic=bulkcut" class="reset_link font_display font_bold">Bulk/Cut</a>
                     <a href="#bulkcut_page" class="reset_link font_display font_bold">
                         <div class="reset_link font_display font_bold bgcolor_black text_color_white
                         padding_10[px] border_radius_4[px] border_style_solid border_color_black">
                             Routine Builder
                         </div>
-                    </a>
+        </a>
         </nav>
         <div class = "bgcolor_darkblue w_100[%] h_fit_content">
-            <div id="index_page_1" class = "relative display_grid grid_template_columns_2fr grid_template_row_1fr margin_top_15[px]">
+            <div id="index_page_1" class = "relative display_grid grid_template_columns_2fr grid_template_row_1fr margin_top_15[px] padding_top_120[px]">
                 <div id = "index_page_content" class="grid_column_1/2 padding_left_24[px]">
                     <div id = "credits_panel" class = "shadow_box bgcolor_lightsky_opacity_0_1
                     display_flex w_fit_content border_radius_4[px] h_fit_content">
                         <p class = "font_display text_color_lightcyan padding_left_8[px] padding_right_80[px] font_size_20[px] margin_8[px]">by Hazwan</p>
                     </div>
-                    <h1 class = "font_display text_color_white text_shadow_dark_strong font_size_60[px] font_type_normal">
+                    <h2 class = "font_display text_color_white text_shadow_dark_strong font_size_120[px] font_type_normal">
                         Fitness
-                    </h1>
-                    <p class = "font_display text_color_white text_shadow_dark_strong font_size_20[px] padding_left_right_16[px]">
+                    </h2>
+                    <p class = "font_display text_color_white text_shadow_dark_strong font_size_40[px] padding_left_right_16[px] padding_top_100[px]">
                         A simple website to help you stay fit, with routines and information on weight-lifting, calisthenics, and more.
                     </p>
                     <div id = "index_page_buttons" class = "display_flex_row justify_content_space_around align_center w_fit_content">
@@ -65,44 +65,231 @@
                     w_auto border_radius_4[px] object_fit_cover object_position_center">
                 </div>
             </div>
-            <footer class = "text_center w_100[%] padding_top_bottom_50[px] font_display font_size_15[px] text_color_white border_4[px] bgcolor_black_opacity_0_8">
+            <footer class = "text_center w_100[%] padding_top_50[px] padding_bottom_150[px] font_display font_size_15[px] text_color_white border_4[px] bgcolor_black_opacity_0_8">
                     Scroll down to see more content.
             </footer>
         </div>
-        <div class = "bgcolor_gradient_down_darkblue-darkcyan w_100[%] top_0 h_fit_content padding_top_24[px]">
+        <div class = "bgcolor_gradient_down_darkblue-lightblue w_100[%] top_0 h_fit_content">
             <div id = "information_page_1">
-                <div class = "bgcolor_black text_color_lightblue border_2[px] border_style_solid border_color_lightblue w_40[%] relative">
-                    <h2 class = "w_fit_content translate_x-100[%] padding_right_24[px] font_display font_size_20
-                     text_color_lightblue font_type_normal left_100[%] padding_top_bottom_32[px] relative">Why do we need to stay fit?</h2>
+                <div class = "bgcolor_black text_color_lightblue relative">
+                    <h2 class = "w_fit_content translate_x-50[%] padding_right_24[px] font_display font_size_50[px]
+                     text_color_lightblue font_type_normal left_50[%] padding_top_bottom_32[px] relative">Why do we need to stay fit?</h2>
+                     <p class="relative font_display text_color_white padding_24[px] font_size_16[px] padding_bottom_8[px] left_3[%] w_75[%]">
+                        Staying fit isn't just about building muscles — it's about living longer, feeling better, and staying mentally sharp. Here's how fitness impacts different parts of your life:
+                    </p>
                 </div>
-                <div id ="information_content_grid" class = "display_grid grid_template_columns_2fr">
-                    <section id = "whystayfit_content" class = "relative bgcolor_white grid_column_1/2
-                    border_radius_4[px] 
-                    border_style_solid 
-                    border_color_lightblue
-                    padding_left_24[px] margin_left_5[%] ">
-                        <h1 class = "font_display font_size_15 text_color_darkblue text_shadow_dark_strong padding_top_bottom_2[px]">
+            </div>
+            <div class = "display_grid grid_gap_8[px] ">
+                <div id = "whystayfit_content_grid" class = "relative display_grid grid_template_columns_200[px]_737[px]_200[px]  grid_gap_2[px] margin_top_15[px]
+                margin_left_auto margin_right_auto ">
+                    <button class="card_left_btn reset_button"> 
+                        <div class = "bgcolor_black_opacity_0_5 grid_column_1/2 text_color_white margin_left_70[%] padding_top_bottom_100[%] text_center font_display">
+                            &lt;
+                        </div>
+                    </button>
+                    <button class="card_right_btn reset_button"> 
+                        <div class = "bgcolor_black_opacity_0_5 grid_column_3/4 text_color_white margin_right_70[%] padding_top_bottom_100[%] text_center font_display">
+                            &gt;
+                        </div>
+                    </button>
+                    <!-- <div  class = "relative grid_column_2/3 grid_row_1/2"> -->
+                        <div id = "whystayfit_content_card_1" class = "relative bgcolor_white
+                        border_radius_4[px] 
+                        border_style_solid 
+                        border_color_lightblue
+                        padding_bottom_215[px] content_card grid_column_2/3 grid_row_1/2">
+                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] text_center">
+                        Lifespan🫀 
+                        </h2>
+                        <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                            Staying fit can help increase your lifespan by:
+                        </p>
+                        <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  padding_right_24[px] text_center reset_list"> 
+                            <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal" >Reducing the risk of chronic diseases</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal " >Improving overall health</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Enhancing immune system function</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Improving sleep quality</li>
+                        </ul>
+                        </div>
+                        <div id = "whystayfit_content_card_2" class = "relative bgcolor_white
+                        border_radius_4[px]
+                        border_style_solid
+                        border_color_lightblue
+                        padding_bottom_215[px]  content_card grid_column_2/3 grid_row_1/2">
+                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] text_center">
+                        Mental Health🧠
+                        </h2>
+                        <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                            Regular exercise can improve mental health by:
+                        </p>
+                        <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  padding_right_24[px] text_center reset_list"> 
+                            <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal" >Reducing symptoms of anxiety and depression</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal " >Enhancing mood and overall mental well-being</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Improving focus and cognitive function</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Reducing stress levels through endorphin release</li>
+                        </ul>
+                        </div>
+                        <div id = "whystayfit_content_card_3" class = "relative bgcolor_white 
+                        border_radius_4[px]
+                        border_style_solid
+                        border_color_lightblue
+                        padding_bottom_215[px] content_card grid_column_2/3 grid_row_1/2">
+                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] text_center">
+                        Physical Health💪
+                        </h2>
+                        <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                            Staying fit can improve physical health by:
+                        </p>
+                        <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  padding_right_24[px] text_center reset_list"> 
+                            <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal" >Improving cardiovascular health</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal " >Strengthening muscles and bones</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Enhancing overall physical fitness</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Increasing bone density and joint strength</li>
+                        </ul>
+                        </div>
+                    <!-- </div> -->
+                        <!-- <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_bottom_2[px]">
                         Lifespan
-                        <h1>
-                        <p class = "font_display font_size_15 text_color_darkblue padding_left_24[px] padding_right_24[px]">
+                        </h2>
+                        <p class = "font_display font_size_20[px] text_color_darkblue padding_left_24[px] padding_right_24[px]">
                             Staying fit can help increase your lifespan by reducing the risk of chronic diseases and improving overall health.
                         </p>
-                    </section> 
+                        <ul class = "font_display font_bold font_size_20[px] text_color_darkblue padding_left_24[px] padding_right_24[px]"> Benefits of staying fit include:
+                            <li class = "font_display font_size_20[px] text_color_darkblue padding_left_12[px] font_type_normal" >Reduce risk of heart disease, stroke, and diabetes</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue padding_left_12[px]  font_type_normal " >Promote healthy aging by keeping organs and body systems functioning efficiently</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue padding_left_12[px]  font_type_normal" >Enhance immune system function, leading to fewer illnesses</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue padding_left_12[px]  font_type_normal" >Improve sleep quality, leading to better overall health</li>
 
-                    <!-- <article id = "whystayfit_articles" class = "relative bgcolor_white grid_column_2/3
+                        </ul>
+                    </div> 
+                    <div id = "whystayfit_content_2" class = "relative bgcolor_white grid_column_2/3 grid_row_1/2
                     border_radius_4[px]
                     border_style_solid
-                    border_color_lightblue
-                    padding_right_24[px] margin_right_5[%]
+                    border_color_lightblue  padding_left_24[px] margin_left_5[%]
                     ">
-                    </article> -->
+                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_bottom_2[px]">
+                        Mental Health
+                        </h2>
+                        <p class = "font_display font_size_20[px] text_color_darkblue padding_left_24[px] padding_right_24[px]">
+                            Regular exercise can improve mental health by reducing symptoms of anxiety and depression, and enhancing mood.
+                        </p>
+                        <p class = "font_display font_size_20[px] text_color_darkblue padding_left_24[px] padding_right_24[px]">
+                            It also boosts dopamine and serotonin levels, which are natural mood enhancers, and improve focus while reducing stress through the release of endorphins.
+                        </p>
+                        <ul class = "font_display font_bold font_size_20[px] text_color_darkblue padding_left_24[px] padding_right_24[px]"> Benefits of staying fit include:
+                            <li class = "font_display font_size_20[px] text_color_darkblue padding_left_12[px] font_type_normal" >Reduce symptoms of anxiety and depression</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue padding_left_12[px]  font_type_normal " >Enhance mood and overall mental well-being</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue padding_left_12[px]  font_type_normal" >Improve focus and cognitive function</li>
+                            <li class = "font_display font_size_20[px] text_color_darkblue padding_left_12[px]  font_type_normal" >Reduce stress levels through endorphin release</li>
+                        </ul>
+                    </div>
+                    <div id = "whystayfit_content_3" class = "relative bgcolor_white grid_column_1/3 grid_row_2/3
+                    border_radius_4[px]
+                    border_style_solid
+                    border_color_lightblue padding_left_24[px] margin_left_5[%] margin_right_5[%]
+                    ">
+                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_bottom_2[px]">
+                        Physical Health
+                        </h2>
+                        <p class = "font_display font_size_20[px] text_color_darkblue padding_left_24[px] padding_right_24[px] padding_left_24[px]">
+                            Staying fit can improve cardiovascular health, strengthen muscles and bones, and enhance overall physical fitness.
+                        </p>
+                        <p class = "font_display font_size_20[px] text_color_darkblue padding_left_24[px] padding_right_24[px]">
+                            It also increases bone density and joint strength, reducing the risk of injury, and enhances cardiovascular efficiency, improving stamina and daily performance.
+                        </p>
+                        <p class = "font_display font_size_20[px] text_color_darkblue padding_left_24[px] padding_right_24[px]">
+                            Regular exercise can also help maintain a healthy weight, which is crucial for overall health and well-being.
+                        </p>
+                    </div> -->
+                    
                 </div>
+               
+            </div>        
+        </div>
+
+            <div id = "why_stayfit_references" class = "relative grid_row_2/3- padding_right_24[px] bgcolor_lightblue
+                border_radius_4[px]- border_color_darkblue margin_top_15[px]- border_bottom_4[px] border_style_solid border_0">
+                    <!-- <h2 class = "font_display font_size_30[px] text_color_lightblue text_shadow_dark_strong padding_top_bottom_2[px]">
+                        References
+                    </h2> -->
+                    <ul class="padding_left_24[px] padding_right_24[px]  reset_list margin_top_15[px]-  display_flex flex_direction_row">
+                    <li class="margin_bottom_20[px] padding_12[px] margin_bottom_20[px]  flex_scalable">
+                        <div class="text_color_gray font_size_14[px] margin_4[px]">World Health Organization (WHO)</div>
+                        <div class="font_display_bold font_size_18[px] margin_4[px]">Physical Activity Facts</div>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                    </li>
+
+                    <li class="margin_bottom_20[px] padding_12[px]  margin_bottom_20[px]  flex_scalable">
+                        <div class="text_color_gray font_size_14[px] margin_4[px]">Centers for Disease Control and Prevention (CDC)</div>
+                        <div class="font_display_bold font_size_18[px] margin_4[px]">Physical Activity Basics</div>
+                        <a href="https://www.cdc.gov/physicalactivity/basics/index.htm" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                    </li>
+
+                    <li class="margin_bottom_20[px] padding_12[px] margin_bottom_20[px] flex_scalable">
+                        <div class="text_color_gray font_size_14[px] margin_4[px]">Mayo Clinic</div>
+                        <div class="font_display_bold font_size_18[px] margin_4[px]">7 Benefits of Regular Exercise</div>
+                        <a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                    </li>
+
+                    <li class="margin_bottom_20[px] padding_12[px]  margin_bottom_20[px] flex_scalable">
+                        <div class="text_color_gray font_size_14[px] margin_4[px]">Harvard Health</div>
+                        <div class="font_display_bold font_size_18[px] margin_4[px]">The Importance of Fitness</div>
+                        <a href="https://www.health.harvard.edu/exercise-and-fitness/the-importance-of-fitness" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                    </li>
+
+                    <li class="margin_bottom_20[px] padding_12[px] margin_bottom_20[px] flex_scalable">
+                        <div class="text_color_gray font_size_14[px] margin_4[px]">ACE Fitness</div>
+                        <div class="font_display_bold font_size_18[px] margin_4[px]">Fitness & Wellness Blog</div>
+                        <a href="https://www.acefitness.org/education-and-resources/lifestyle/blog/" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                    </li>
+
+                    <li class="margin_bottom_20[px] padding_12[px] margin_bottom_20[px]  flex_scalable">
+                        <div class="text_color_gray font_size_14[px] margin_4[px]">Examine.com</div>
+                        <div class="font_display_bold font_size_18[px] margin_4[px]">Evidence-Based Nutrition & Supplement Info</div>
+                        <a href="https://examine.com/" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                    </li>
+                    </ul>
+            </div>
+    
+<!--             
+            <div id="subtopic_selection" class = "margin_top_bottom_50[px] w_100[%] padding_top_bottom_50[px] bgcolor_black_opacity_0_25">
+                <h2 class = "font_display font_size_30[px] text_color_lightblue text_shadow_dark_strong text_center padding_top_bottom_2[px]">
+                    Select a subtopic to learn more
+                </h2>
+                <div class = "display_grid grid_gap_8[px] padding_left_right_24[px]">
+                    <button id = "weightlift_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_1/2 w_100[%]
+                    overflow_hidden relative ">
+                        <h2 class = "absolute font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%]">
+                            Weight-Lifting
+                        </h2>
+                        <img src="images/dumbbell.jpg" alt="dumbell Image" class="h_200[%] 
+                        w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                    </button>
+                    <button id = "calisthenics_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_2/3 w_100[%]
+                    overflow_hidden relative ">
+                        <h2 class = "absolute font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%]">
+                            Calisthenics
+                        </h2>
+                        <img src="images/pullups.jpg" alt="pullups Image" class="h_200[%] 
+                        w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                    </button>
+                    <button id = "bulkcut_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_3/4 w_100[%]
+                    overflow_hidden relative ">
+                        <h2 class = "absolute font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%]">
+                            Bulk/Cut
+                        </h2>
+                        <img src="images/CalorieDeficit.jpg" alt="pullups Image" class="h_200[%] 
+                        w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                    </button>
+                </div>
+            </div>
+            <div id = "subtopic_content" class = "relative">
+                
+            </div>
+            <footer class = " w_100[%] padding_top_bottom_100[px]">
 
             </div>
-            <footer class = " w_100[%] padding_top_bottom_500[px] ">
-
-            </footer>
-        </div>
+            </footer> -->
     </body>
     
 </html>
