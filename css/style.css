@@ -522,6 +522,22 @@
 {
     grid-template-rows: 1fr;
 }
+.grid_template_rows_10\[\%\] 
+{
+    grid-template-rows: 10%;
+}
+.grid_template_rows_15\[\%\] 
+{
+    grid-template-rows: 15%;
+}
+.grid_template_rows_20\[\%\] 
+{
+    grid-template-rows: 20%;
+}
+.grid_template_rows_30\[\%\] 
+{
+    grid-template-rows: 30%;
+}
 .grid_template_rows_2fr 
 {
     grid-template-rows: 2fr;
@@ -1105,6 +1121,14 @@
 {
     z-index: 3;
 }
+.w_95\[\%\] 
+{
+    width: 95%;
+}
+.h_98\[\%\]
+{
+    height: 98%;
+}
 /* -------------------------End of Transform------------------------------------------- */
 /* -------------------------Padding--------------------------------------------------- */
 .padding_0 
@@ -1414,6 +1438,11 @@
 {
     padding-top: 16px;
     padding-bottom: 16px;
+}
+.padding_top_bottom_20\[px\] 
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .padding_top_bottom_24\[px\] 
 {

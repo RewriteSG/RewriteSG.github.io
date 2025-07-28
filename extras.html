@@ -60,7 +60,7 @@
         <div class = "padding_top_bottom_50[px] bgcolor_black font_display_bold text_center text_color_lightcyan font_bold font_size_50[px]">
             Muscle Groups
         </div>
-        <main class = "relative bgcolor_gradient_down_lightgray_gray relative padding_top_15[px]">
+        <main class = "relative bgcolor_gradient_down_lightgray_gray relative padding_top_15[px] display_flex_row">
             <div id = "muscle_group_section" class = "relative bgcolor_white w_fit_content h_fit_content padding_75[px] 
             border_radius_10[px] border_thickness_5[px] border_style_solid margin_left_70[px]">
                 <div id = "front_body" class = "relative w_fit_content h_fit_content display_none">
@@ -291,13 +291,22 @@
                     Flip
                 </button>
             </div>
-            <div>
-
+            <div class = "bgcolor_black relative display_grid grid_template_rows_15[%]">
+                <div class = "border_color_black border_style_solid border_thickness_5[px] bgcolor_darkblue grid_row_1/2 grid_column_1/2">
+                    <h2 id = "muscle_group_header" class = "font_display font_size_30[px] text_color_lightblue font_bold text_center padding_top_bottom_20[px]">Select Muscle Group</h2>
+                </div>
+                <div class = "overflow_scroll bgcolor_gray grid_row_2/3 grid_column_1/2 margin_10[px]">
+                    <div class= "exercises_calfs bgcolor_white">
+                        <h3>
+                            Calf Raises
+                        </h3>
+                    </div>
+                </div>
             </div>
-            <footer class = "text_center w_100[%] padding_top_50[px] padding_bottom_150[px] font_display font_size_15[px] text_color_white border_4[px] bgcolor_black_opacity_0_8-">
-                    Scroll down to see more content.
-            </footer>
         </main>
+        <footer class = "text_center w_100[%] padding_top_50[px] padding_bottom_150[px] font_display font_size_15[px] text_color_white border_4[px] bgcolor_black_opacity_0_8-">
+                Scroll down to see more content.
+        </footer>
     </body>
 
 </html>
