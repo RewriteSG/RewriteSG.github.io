@@ -7,8 +7,297 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js" defer></script>
     </head>
-    <body>
+    <body class= "relative bgcolor_darkblue" id = "extras_page">
+        <nav id = "sticky_navigation" class = "shadow_box sticky 
+                display_flex_row 
+                justify_content_space_around 
+                align_center
+                border_radius_4[px]
+                border_color_lightblue
+                bgcolor_lightblue
+                left_100[%] 
+                top_10[px]
+                w_75[%]
+                z_layer_3">
+                    <a href="index.html" class="reset_link font_display font_bold text_shadow_dark_strong
+                    padding_top_bottom_16[px]
+                    padding_left_12[px]">Home</a>
+                    <a href="#whystayfit_content_grid" class="reset_link font_display font_bold">Why Stay Fit</a>
+                    <a href="subtopics.html?topic=weightlift" class="reset_link font_display font_bold">Weight-Lift</a>
+                    <a href="subtopics.html?topic=calisthenics" class="reset_link font_display font_bold">Calisthenics</a>
+                    <a href="subtopics.html?topic=bulkcut" class="reset_link font_display font_bold">Bulk/Cut</a>
+                    <a href="#bulkcut_page" class="reset_link font_display font_bold">
+                        <div class="reset_link font_display font_bold bgcolor_black text_color_white
+                        padding_10[px] border_radius_4[px] border_style_solid border_color_black">
+                            Routine Builder
+                        </div>
+        </a>
+        </nav>
+        <div id="selection_content" class = "relative padding_top_bottom_10[px] bgcolor_gradient_down_darkblue-lightblue">
+            <div id="extra_selection" class = "w_100[%] padding_top_bottom_50[px] bgcolor_black_opacity_0_25-">
+                <!-- <h2 class = "font_display font_size_30[px] text_color_lightblue text_shadow_dark_strong text_center padding_top_bottom_2[px]">
+                </h2> -->
+                <div class = "display_grid grid_gap_8[px] padding_left_right_24[px]">
+                    <button id = "routinebuilder_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_1/2 w_100[%]
+                    overflow_hidden relative  reset_button">
+                        <span class = "absolute reset_button font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%] font_bold">
+                            Routine Builder
+                        </span>
+                        <img src="images/pullups.jpg" alt="pullups Image" class="h_200[%] 
+                        w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                    </button>
+                    <button id = "musclegroup_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_2/3 w_100[%]
+                    overflow_hidden relative reset_button">
+                        <span class = "absolute reset_button font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%]  font_bold">
+                            Muscle Group Workouts
+                        </span>
+                        <img src="images/dumbbell.jpg" alt="dumbell Image" class="h_200[%] 
+                        w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class = "padding_top_bottom_50[px] bgcolor_black font_display_bold text_center text_color_lightcyan font_bold font_size_50[px]">
+            Muscle Groups
+        </div>
+        <main class = "relative bgcolor_gradient_down_lightgray_gray relative padding_top_15[px]">
+            <div id = "muscle_group_section" class = "relative bgcolor_white w_fit_content h_fit_content padding_75[px] 
+            border_radius_10[px] border_thickness_5[px] border_style_solid margin_left_70[px]">
+                <div id = "front_body" class = "relative w_fit_content h_fit_content display_none">
+                    <section id = "front_fullBody" class = "w_fit_content h_fit_content">
+                        <div class = "overflow_hidden relative full_body_art_frame">
+                            <img src="images/ArtBody-Sheet.png" alt="" class="front_full">
+                        </div>
+                        <div id = "front_traps_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button">
 
+                            </button>
+                        </div>
+                        <div id = "front_delts_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button">
+                            </button>
+                            <button class = "absolute reset_button">
+                            </button>
+                        </div>
+                        <div id = "front_biceps_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "front_forearm_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "front_pecs_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "front_abdominals_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "front_obliques_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "front_quads_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "front_calfs_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                    </section>
+
+                    <section id = "front_traps_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_traps">
+                        </div>
+                    </section>
+                    <section id = "front_forearms_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_forearms">
+                        </div>
+                    </section>
+                    <section id = "front_biceps_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_biceps">
+                        </div>
+                    </section>
+                    <section id = "front_delts_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_delts">
+                        </div>
+                    </section>
+                    <section id = "front_pecs_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_pecs">
+                        </div>
+                    </section>
+                    <section id = "front_obliques_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_obliques">
+                        </div>
+                    </section>
+                    <section id = "front_abdominals_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_abdominals">
+                        </div>
+                    </section>
+                    <section id = "front_quads_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_quads">
+                        </div>
+                    </section>
+                    <section id = "front_calfs_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="front_calfs">
+                        </div>
+                    </section>
+                                
+                </div>
+                <div id = "back_body" class = "relative w_fit_content h_fit_content">
+                    <section id = "back_fullBody" class = "w_fit_content h_fit_content">
+                        <div class = "overflow_hidden relative full_body_art_frame">
+                            <img src="images/ArtBody-Sheet.png" alt="" class="back_full">
+                        </div>
+                        <div id = "back_traps_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button">
+                            </button>
+                        </div>
+                        <div id = "back_delts_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button">
+                            </button>
+                            <button class = "absolute reset_button">
+                            </button>
+                        </div>
+                        <div id = "back_triceps_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "back_forearm_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "back_lats_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "back_upperback_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "back_lowerback_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "back_glutes_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "back_hamstring_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                        <div id = "back_calfs_btn" class="w_0 h_0">
+                            <button class = "absolute reset_button ">
+                            </button>
+                            <button class = "absolute reset_button ">
+                            </button>
+                        </div>
+                    </section>
+                                        <!-- 
+/* Frame positions at 4× scale */
+.full_body_art_frame .back_full        { left: -3120px; }
+.full_body_art_frame .back_traps       { left: -3432px; }
+.full_body_art_frame .back_forearms    { left: -3744px; }
+.full_body_art_frame .back_triceps     { left: -4056px; }
+.full_body_art_frame .back_rear_delts  { left: -4368px; }
+.full_body_art_frame .back_lower_back  { left: -4680px; }
+.full_body_art_frame .back_upper_back  { left: -4992px; }
+.full_body_art_frame .back_lats        { left: -5304px; }
+.full_body_art_frame .back_glutes      { left: -5616px; }
+.full_body_art_frame .back_hamstring   { left: -5928px; }
+.full_body_art_frame .back_calfs       { left: -6240px; } -->
+                    <section id = "back_traps_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_traps">
+                        </div>
+                    <section id = "back_forearms_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_forearms">
+                        </div>
+                    </section>
+                    <section id = "back_triceps_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_triceps">
+                        </div>
+                    </section>
+                    <section id = "back_rear_delts_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_rear_delts">
+                        </div>
+                    </section>
+                    <section id = "back_lower_back_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_lower_back">
+                        </div>
+                    </section>
+                    <section id = "back_upper_back_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_upper_back">
+                        </div>
+                    </section>
+                    <section id = "back_lats_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_lats">
+                        </div>
+                    </section>
+                    <section id = "back_glutes_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_glutes">
+                        </div>
+                    </section>
+                    <section id = "back_hamstring_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_hamstring">
+                        </div>
+                    </section>
+                    <section id = "back_calfs_red" class = " w_fit_content h_fit_content absolute top_0">
+                        <div id = "full_body" class = "overflow_hidden full_body_art_frame z_layer_1">
+                            <img src="images/ArtBody-Sheet(red).png" alt="" class="back_calfs">
+                        </div>
+                    </section>
+                </div>
+                <button id = "toggle_body" class = "absolute bgcolor_black font_display font_bold text_color_white font_size_30[px]">
+                    Flip
+                </button>
+            </div>
+            <div>
+
+            </div>
+            <footer class = "text_center w_100[%] padding_top_50[px] padding_bottom_150[px] font_display font_size_15[px] text_color_white border_4[px] bgcolor_black_opacity_0_8-">
+                    Scroll down to see more content.
+            </footer>
+        </main>
     </body>
 
 </html>

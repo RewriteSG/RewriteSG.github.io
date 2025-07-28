@@ -18,10 +18,12 @@
     --font-display: 'Aleo_Regular', sans-serif;
     --font-display-italic: 'Aleo_Italic', sans-serif;
     --dark-blue: #02385C;
+    --oceanic: #0476C2;
     --light-blue: #11C7F9;
     --light-cyan: #11F9F9;
     --dark-cyan: #11CFF9;
     --light-sky: #71C6FF;
+
     --black: #111111;
     --white: #FFFFFF;
     --gray: #808080;
@@ -57,6 +59,7 @@
 {
     list-style: none;
 }
+
 /* -------------------------Fonts------------------------------------------- */
 .font_display 
 {
@@ -221,6 +224,14 @@
 .border_radius_4\[px\] 
 {
     border-radius: 4px;
+}
+.border_radius_10\[px\] 
+{
+    border-radius: 10px;
+}
+.border_thickness_5\[px\]
+{
+    border-width: 5px;
 }
 .border_bottom_1\[px\] 
 {
@@ -756,7 +767,15 @@
 }
 .bgcolor_gradient_down_darkcyan-lightsky
 {
-  background: linear-gradient(to bottom, var(--dark-cyan), var(--light-sky));
+    background: linear-gradient(to bottom, var(--dark-cyan), var(--light-sky));
+}
+.bgcolor_gradient_down_lightblue_oceanic
+{
+    background: linear-gradient(to bottom, var(--light-blue), var(--oceanic));
+}
+.bgcolor_gradient_down_lightgray_gray
+{
+    background: linear-gradient(to bottom, var(--light-gray), var(--gray));
 }
 .text_color_darkblue
 {
@@ -816,6 +835,22 @@
 }
 /* -------------------------End of Colors------------------------------------------- */
 /* -------------------------Transform------------------------------------------- */
+.scale_1
+{
+    scale: 1;
+}
+.scale_1_5
+{
+    scale:1.5;
+}
+.scale_2
+{
+    scale:2;
+}
+.scale_3
+{
+    scale:3;
+}
 .left_0 
 {
     left: 0;
@@ -948,6 +983,10 @@
 {
     height: 200%;
 }
+.h_200\[px\]
+{
+    height: 200px;
+}
 .h_50\[\%\]
 {
     height: 50%;
@@ -981,6 +1020,10 @@
 .w_200\[\%\]
 {
     width: 200%;
+}
+.w_200\[px\]
+{
+    width: 200px;
 }
 .w_20\[\%\]
 {
@@ -1076,9 +1119,21 @@
 {
     padding: 2px;
 }
+.padding_24\[px\] 
+{
+    padding: 24px;
+}
 .padding_4\[px\] 
 {
     padding: 4px;
+}
+.padding_40\[px\] 
+{
+    padding: 40px;
+}
+.padding_75\[px\] 
+{
+    padding: 75px;
 }
 .padding_8\[px\] 
 {
@@ -1195,6 +1250,10 @@
 .padding_top_8\[px\] 
 {
     padding-top: 8px;
+}
+.padding_top_15\[px\] 
+{
+    padding-top: 15px;
 }
 .padding_top_16\[px\] 
 {
@@ -1521,6 +1580,14 @@
 {
     margin-left: 5%;
 }
+.margin_left_5\[px\]
+{
+    margin-left: 5px;
+}
+.margin_left_70\[px\]
+{
+    margin-left: 70px;
+}
 .margin_right_5\[\%\]
 {
     margin-right: 5%;
@@ -1549,15 +1616,15 @@
 }
 /* ---------------------------------------------------End Of Margins------------------------------------------------------ */
 /* ---------------------------------------------------Specialised Classes------------------------------------------------- */
-#subtopic_selection span
+#subtopic_selection span,  #extra_selection span
 {
     z-index: 1;
 }
-#subtopic_selection img, #subtopic_selection button
+#subtopic_selection img, #subtopic_selection button, #extra_selection img
 {
     transition: all .3s ease-in-out;
 }
-#subtopic_selection button:hover:not(.topic_selected_btn) img
+#subtopic_selection button:hover:not(.topic_selected_btn) img, #extra_selection button:hover:not(.topic_selected_btn) img
 {
     opacity: .8;
     transform: scale(1.1);
@@ -1593,4 +1660,321 @@
     transform: scale(.1);
     z-index: 0;
     overflow: hidden;
+}
+.full_body_art_frame img
+{
+    image-rendering: pixelated;
+    position: relative;
+}
+.full_body_art_frame {
+    width: 312px;   /* 78 * 4 */
+    height: 564px;  /* 141 * 4 */
+    overflow: hidden;
+    position: relative;
+}
+
+.full_body_art_frame img {
+    width: 6552px;  /* (78 * 20) * 4 = 1560 * 4 */
+    height: 564px;
+    /* position: absolute; */
+    /* top: 0; */
+}
+
+/* Frame positions at 4× scale */
+.full_body_art_frame .front_full       { left:    0px; }
+.full_body_art_frame .front_traps      { left: -312px; }
+.full_body_art_frame .front_forearms   { left: -624px; }
+.full_body_art_frame .front_biceps     { left: -936px; }
+.full_body_art_frame .front_delts      { left: -1248px; }
+.full_body_art_frame .front_pecs       { left: -1560px; }
+.full_body_art_frame .front_obliques   { left: -1872px; }
+.full_body_art_frame .front_abdominals { left: -2184px; }
+.full_body_art_frame .front_quads      { left: -2496px; }
+.full_body_art_frame .front_calfs      { left: -2808px; }
+.full_body_art_frame .back_full        { left: -3120px; }
+.full_body_art_frame .back_traps       { left: -3432px; }
+.full_body_art_frame .back_forearms    { left: -3744px; }
+.full_body_art_frame .back_triceps     { left: -4056px; }
+.full_body_art_frame .back_rear_delts  { left: -4368px; }
+.full_body_art_frame .back_lower_back  { left: -4680px; }
+.full_body_art_frame .back_upper_back  { left: -4992px; }
+.full_body_art_frame .back_lats        { left: -5304px; }
+.full_body_art_frame .back_glutes      { left: -5616px; }
+.full_body_art_frame .back_hamstring   { left: -5928px; }
+.full_body_art_frame .back_calfs       { left: -6240px; }
+
+/* .full_body_art_frame
+{
+    width: 78px;
+    height: 141px;
+    background-image: url("../images/FullArtBody-Sheet.svg");
+    background-repeat: no-repeat;
+    background-size: auto 141px; force height match, auto width
+}
+.full_body_art_frame .front_full
+{
+   left: 0px;
+}
+.full_body_art_frame .front_traps
+{
+   left: -78px;
+}
+.full_body_art_frame .front_forearms
+{
+   left: -156px;
+}
+.full_body_art_frame .front_biceps
+{
+   left: -234px;
+}
+.full_body_art_frame .front_delts
+{
+   left: -312px;
+}
+.full_body_art_frame .front_pecs
+{
+   left: -390px;
+}
+.full_body_art_frame .front_obliques
+{
+   left: -468px;
+}
+.full_body_art_frame .front_abdominals
+{
+   left: -546px;
+}
+.full_body_art_frame .front_quads
+{
+   left: -624px;
+}
+.full_body_art_frame .front_calfs
+{
+   left: -702px;
+}
+.full_body_art_frame .back_full
+{
+   left: -780px;
+}
+.full_body_art_frame .back_traps
+{
+   left: -858px;
+}
+.full_body_art_frame .back_forearms
+{
+   left: -936px;
+}
+.full_body_art_frame .back_triceps
+{
+   left: -1014px;
+}
+.full_body_art_frame .back_rear_delts
+{
+   left: -1092px;
+}
+.full_body_art_frame .back_lower_back
+{
+   left: -1170px ;
+}
+.full_body_art_frame .back_upper_back
+{
+   left: -1248px ;
+}
+.full_body_art_frame .back_lats
+{
+   left: -1326px ;
+}
+.full_body_art_frame .back_glutes
+{
+   left: -1404px ;
+}
+.full_body_art_frame .back_hamstring
+{
+   left: -1482px ;
+}
+.full_body_art_frame .back_calfs
+{
+   left: -1560px ;
+}
+
+
+ */
+
+
+#front_traps_btn button, #back_traps_btn button 
+{
+    top: 79px;
+    left: 106px;
+    width: 100px;
+    height: 25px;
+}
+ #back_traps_btn button 
+ {
+    top: 87px;
+ }
+#front_delts_btn button:first-child,#back_delts_btn button:first-child
+{
+    top: 90px;
+    left: 82px;
+    height: 51px;
+    width: 28px;
+    z-index: 0;
+    rotate: 29deg;
+}
+#front_delts_btn button:last-child,#back_delts_btn button:last-child
+{
+    top: 90px;
+    left: 200px;
+    height: 51px;
+    width: 28px;
+    z-index: 0;
+    rotate: 331deg;
+}
+#front_biceps_btn button:first-child , #back_triceps_btn button:first-child
+{
+    top: 141px;
+    left: 58px;
+    height: 50px;
+    width: 40px;
+}
+#front_biceps_btn button:last-child , #back_triceps_btn button:last-child
+{
+    top: 141px;
+    left: 176px;
+    height: 50px;
+    width: 40px;
+    transform:translateX(100%)
+}
+#front_forearm_btn button:first-child, #back_forearm_btn button:first-child
+{
+    width: 50px;
+    height: 65px;
+    top: 186px;
+    left: 16px;
+}
+#front_forearm_btn button:last-child , #back_forearm_btn button:last-child
+{
+    width: 50px;
+    height: 65px;
+    top: 186px;
+    left: 196px;
+    transform:translateX(100%);
+}
+#front_pecs_btn button {
+    top: 103px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 53px;
+}
+#front_abdominals_btn button {
+    left: 50%;
+    top: 164px;
+    transform: translateX(-50%);
+    height: 95px;
+    width: 46px;
+}
+#front_quads_btn button:first-child {
+    left: 99px;
+    top: 256px;
+    width: 50px;
+    height: 150px;
+}
+#front_quads_btn button:last-child {
+    left: 162px;
+    top: 256px;
+    width: 50px;
+    height: 150px;
+}
+#front_obliques_btn button:first-child {
+    left: 106px;
+    top: 160px;
+    width: 26px;
+    height: 77px;
+}
+#front_obliques_btn button:last-child {
+    left: 180px;
+    top: 160px;
+    width: 26px;
+    height: 77px;
+}
+#front_calfs_btn button:first-child {
+    left: 78px;
+    top: 414px;
+    width: 50px;
+    height: 150px;
+}
+#front_calfs_btn button:last-child {
+    left: 184px;
+    top: 414px;
+    width: 50px;
+    height: 150px;
+}
+#back_hamstring_btn button:first-child {
+    left: 85px;
+    top: 304px;
+    width: 64px;
+    height: 102px;
+}
+#back_lowerback_btn button {
+    left: 50%;
+    top: 181px;
+    width: 47px;
+    height: 63px;
+    transform: translateX(-50%);
+}
+#back_upperback_btn button {
+    left: 50%;
+    top: 115px;
+    width: 37px;
+    height: 56px;
+    transform: translateX(-50%);
+}
+#back_lats_btn button:first-child {
+    left: 100px;
+    top: 120px;
+    width: 50px;
+    height: 123px;
+}
+#back_lats_btn button:last-child 
+{
+    left: 166px;
+    top: 120px;
+    width: 50px;
+    height: 123px;
+}
+
+#back_glutes_btn button {
+    top: 246px;
+    width: 82px;
+    height: 57px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#back_hamstring_btn button:last-child {
+    left: 163px;
+    top: 304px;
+    width: 64px;
+    height: 102px;
+}
+#back_calfs_btn button:first-child {
+    left: 85px;
+    top: 422px;
+    width: 50px;
+    height: 65px;
+}
+#back_calfs_btn button:last-child {
+    left: 175px;
+    top: 422px;
+    width: 50px;
+    height: 65px;
+}
+#front_body button, #back_body button
+{
+    background-color: rgba(var(--black-rgb), 0.25);
+}
+#toggle_body {
+    right: 0;
+    bottom: 0;
+    height: 95px;
+    width: 95px;
 }
