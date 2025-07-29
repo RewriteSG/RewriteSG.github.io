@@ -23,11 +23,12 @@
     --light-cyan: #11F9F9;
     --dark-cyan: #11CFF9;
     --light-sky: #71C6FF;
-
+    --light-red-sky: #ff7171;
     --black: #111111;
     --white: #FFFFFF;
     --gray: #808080;
     --light-gray: #F0F0F0;
+    --light-green: #7dff71;
   --dark-blue-rgb: 2, 56, 92;
   --light-blue-rgb: 17, 199, 249;
   --light-cyan-rgb: 17, 249, 249;
@@ -37,6 +38,8 @@
   --white-rgb: 255, 255, 255;
   --gray-rgb: 128, 128, 128;
     --light-gray-rgb: 240, 240, 240;
+--light-green-rgb: 125, 255, 113;
+
 }
 *
 {
@@ -237,6 +240,10 @@
 {
     border-radius: 10px;
 }
+.border_radius_40\[px\] 
+{
+    border-radius: 40px;
+}
 .border_radius_70\[px\] 
 {
     border-radius: 70px;
@@ -418,6 +425,10 @@
 {
     align-items: center;
 }
+.align_content_flex_start
+{
+    align-content: flex-start;
+}
 .align_flex_start 
 {
     align-items: flex-start;
@@ -524,7 +535,7 @@
 }
 .grid_template_columns_200\[px\]_737\[px\]_200\[px\] 
 {
-    grid-template-columns: 200px 737px 200px;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 .grid_template_rows_auto 
 {
@@ -664,6 +675,10 @@
 }
 /* -------------------------End of Transition------------------------------------------- */
 /* -------------------------Colors------------------------------------------- */
+.bgcolor_lightredsky
+{
+    background-color: var(--light-red-sky);
+}
 .bgcolor_darkblue
 {
     background-color: var(--dark-blue);
@@ -763,6 +778,18 @@
 .bgcolor_lightgray
 {
     background-color: var(--light-gray);
+}
+.bgcolor_lightgreen
+{
+    background-color: var(--light-green);
+}
+.bgcolor_lightgreen_opacity_0_25
+{
+    background-color: rgba(var(--light-green-rgb),0.25);
+}
+.bgcolor_lightgreen_opacity_0_75
+{
+    background-color: rgba(var(--light-green-rgb),0.75);
 }
 .bgcolor_gray
 {
@@ -1782,8 +1809,20 @@
 {
     margin-right: auto;
 }
+.margin_top_auto
+{
+    margin-top: auto;
+}
+.margin_bottom_auto
+{
+    margin-bottom: auto;
+}
 /* ---------------------------------------------------End Of Margins------------------------------------------------------ */
 /* ---------------------------------------------------Specialised Classes------------------------------------------------- */
+.reference-list
+{
+    flex-wrap: wrap;
+}
 #subtopic_selection span,  #extra_selection span
 {
     z-index: 1;
@@ -1818,7 +1857,10 @@
 .content_card
 {
     transition: all .3s ease-in-out;
+    opacity: 1;
     z-index: 2;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .content_preview_left
 {
@@ -1837,6 +1879,7 @@
 .content_card_preview_none
 {
     transform: scale(.1);
+    opacity: 0;
     z-index: 0;
     overflow: hidden;
 }
@@ -2229,7 +2272,45 @@
 .back_body section.muscle_selected {
     opacity: 1;
 }
-#muscle_group_full_body_section
+.full_body
 {
     transition: transform 0.5s ease-in-out;
+}
+.scalex_0
+{
+    transform:scaleX(0)
+}
+.chosen_option 
+{
+    flex-grow: 1;
+    border-radius: 70px;
+    background-color: var(--light-blue);
+    color: var(--black);
+    text-align: center;
+    font-family: var(--font-display);
+    width: fit-content;
+    height: fit-content;
+    margin: 10px;
+    padding: 10px;
+}
+div#quiz_conclusion
+{  
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    align-content: center;
+    width: 50%;
+    height: 50%;
+    transform: translate(50%, 50%);
+    border-radius: 40px;
+}
+@media screen and (max-width: 800px) 
+{
+    div#quiz_process {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        z-index: 3;
+    }
 }

@@ -264,6 +264,7 @@ function Load_Subtopic_page()
         musclegroup_selection_btn.classList.remove("selected_btn");
         quiz_selection_btn.classList.add("selected_btn");
         HideAllExtras();
+        RemoveAllMuscleSelection();
         dQuiz.classList.remove("display_none");
     });
     musclegroup_selection_btn.addEventListener("click", function()
@@ -273,6 +274,7 @@ function Load_Subtopic_page()
         quiz_selection_btn.classList.remove("selected_btn");
         musclegroup_selection_btn.classList.add("selected_btn");
         HideAllExtras();
+        RemoveAllMuscleSelection();
         dMuscleGroup.classList.remove("display_none");
     });
     const sideFront = "front";
@@ -425,17 +427,16 @@ function MuscleGroupBtn_Event(getMuscleFunction)
     if(muscle_red.classList.contains("muscle_selected"))
     {
         RemoveAllMuscleSelection();
-    HideAllExercise();
+        muscleGroup_HideAllExercise();
         return;
     }
     RemoveAllMuscleSelection();
     muscle_red.classList.add("muscle_selected");
-    currentMuscle_Group_Selected = muscle;
-    console.log(currentMuscle_Group_Selected);
-    HideAllExercise();
-    SearchExerciseByName(currentMuscle_Group_Selected);
+    muscleGroup_HideAllExercise();
+    SearchExerciseByName(muscle);
     // HideAllHighlights();
 }
+
 function InitaliseMuscleGroupBtn(getMuscleFunction)
 {
     fullbodySection = "muscle_group_full_body_section";
@@ -465,7 +466,6 @@ function InitaliseMuscleGroupBtn(getMuscleFunction)
 }   
     fullbodySection = "muscle_group_full_body_section";
     var currentSide = "back";
-    var currentMuscle_Group_Selected;
     HideAllHighlights();
     InitaliseMuscleGroupBtn(GetFrontTraps);
     InitaliseMuscleGroupBtn(GetFrontPecs);
@@ -488,17 +488,18 @@ function InitaliseMuscleGroupBtn(getMuscleFunction)
     InitaliseMuscleGroupBtn(GetBackHamstring);
     InitaliseMuscleGroupBtn(GetBackCalfs);
     
-    const ExerciseElements = document.querySelectorAll("#muscle_group_content > div ");
+    var ExerciseElements = document.querySelectorAll("#muscle_group_content > div ");
 
-    function HideAllExercise()
+    function muscleGroup_HideAllExercise()
     {
+        ExerciseElements = document.querySelectorAll("#muscle_group_content > div ");
         ExerciseElements.forEach(element => {
             if(!element.classList.contains("display_none"))
                 element.classList.add("display_none");
         });
         document.getElementById("muscle_group_header").innerHTML = "Select Muscle Group";
     }
-    HideAllExercise();
+    muscleGroup_HideAllExercise();
     
     function SearchExerciseByName(muscle)
     {
@@ -514,8 +515,7 @@ function InitaliseMuscleGroupBtn(getMuscleFunction)
         document.getElementById("muscle_group_header").innerHTML = displayName.toUpperCase();
         muscleName = muscle;
         let exerciseName = "exercises_"+muscleName.replace(currentSide+"_", "");
-        muscleName = muscle;
-        if(muscleName == "back_delts")
+        if(muscle == "back_delts")
             exerciseName = "exercises_back_delts";
         console.log("searching "+ exerciseName)
         const SearchExercises = document.querySelectorAll("."+exerciseName);
@@ -523,7 +523,204 @@ function InitaliseMuscleGroupBtn(getMuscleFunction)
             exerciseElement.classList.remove("display_none");
         });
     }
+    const eFrontBody = document.querySelectorAll(".front_body");
+    const eBackBody = document.querySelectorAll(".back_body");
+    const eFullBody = document.querySelectorAll(".full_body");
     
+    function DisableSide()
+    {
+        let sideToDisable;
+        if(currentSide == sideFront)
+            sideToDisable = eBackBody;
+        else
+            sideToDisable = eFrontBody;
+
+        sideToDisable.forEach(element => {
+            if(!element.classList.contains("display_none"))
+                element.classList.add("display_none");
+        });
+    }
+    function EnableSide()
+    {
+        eFullBody.forEach(element => {
+            element.classList.remove("scalex_0")
+        });
+        let sideToEnable;
+        if(currentSide == sideFront)
+            sideToEnable = eFrontBody;
+        else
+            sideToEnable = eBackBody;
+
+        sideToEnable.forEach(element => {
+            element.classList.remove("display_none");
+        });
+    }
+    function ChangeToSide()
+    {
+        eFullBody.forEach(element => {
+        if(element.classList.contains("scalex_0"))
+            return;
+        });
+        eFullBody.forEach(element => {
+            element.classList.add("scalex_0");
+        });
+        setTimeout(DisableSide, 500);
+        setTimeout(EnableSide, 500);
+    }
+    function FlipBtnEvent()
+    {
+        if(currentSide == sideFront)
+            currentSide = sideBack;
+        else
+            currentSide = sideFront;
+        ChangeToSide();
+    }
+
+    const FlipBtn = document.querySelectorAll(".toggle_body");
+    FlipBtn.forEach(element => {
+        console.log("Adding");
+        element.addEventListener("click", FlipBtnEvent);
+    });
+
+var eQuizChosenOptions = document.querySelectorAll(".chosen_option");
+const eQuizChosenOptionContainer = document.getElementById("chosen_options_container");
+function RemoveAllChosenOptions()
+{
+    eQuizChosenOptions = document.querySelectorAll(".chosen_option");
+    eQuizChosenOptions.forEach(element => {
+        element.remove();
+    });
+}
+function QuizSelectMuscleToOption(muscle)
+{
+    const newOption = document.createElement("p");
+    let muscleName = muscle;
+    let displayName = muscleName.replace(currentSide+"_","");
+    muscleName = muscle;
+    if(muscleName == "back_delts")
+        displayName = "rear delts";
+    if(muscleName == "back_lowerback")
+        displayName = "lower back";
+    if(muscleName == "back_upperback")
+        displayName = "upper back";
+    newOption.classList.add("chosen_option");
+    newOption.innerHTML = displayName;
+    muscleName = muscle;
+    let exerciseName = "exercises_"+muscleName.replace(currentSide+"_", "");
+        if(muscle == "back_delts")
+            exerciseName = "exercises_back_delts";
+    newOption.classList.add("option_"+exerciseName);
+    eQuizChosenOptionContainer.appendChild(newOption);
+}
+function QuizMuscleSelectBtn_Event(getMuscleFunction)
+{
+    let {element: muscle_red, muscleName: muscle} = getMuscleFunction("red");
+
+    if(muscle_red.classList.contains("muscle_selected"))
+    {
+        let exerciseName = "exercises_"+muscleName.replace(currentSide+"_", "");
+        if(muscle == "back_delts")
+            exerciseName = "exercises_back_delts";
+        document.querySelector(".option_"+exerciseName).remove();
+        muscle_red.classList.remove("muscle_selected");
+        return;
+    }
+    muscle_red.classList.add("muscle_selected");
+    QuizSelectMuscleToOption(muscle);
+}
+function QuizRandomizeExercise()
+{
+    ExerciseElements = document.querySelectorAll("#quiz_content > div ");
+    ExerciseElements.forEach(element => {
+        if(!element.classList.contains("display_none"))
+            element.classList.add("display_none");
+    });
+    const randomIndex = Math.floor(Math.random() * ExerciseElements.length);
+    if (ExerciseElements.length > 0) {
+        ExerciseElements[randomIndex].classList.remove("display_none");
+    }
+}
+function InitaliseQuizMuscleBtn(getMuscleFunction)
+{
+    fullbodySection = "quiz_full_body_section";
+    const {element: muscle_group_Btn, muscleName: muscle } = getMuscleFunction("btn");
+    muscle_group_Btn.classList.add("opacity_0");
+
+    muscle_group_Btn.addEventListener("click", function()
+    {
+        fullbodySection = "quiz_full_body_section";
+        QuizMuscleSelectBtn_Event(getMuscleFunction);
+    });
+    muscle_group_Btn.addEventListener("mouseenter",function()
+    {
+        fullbodySection = "quiz_full_body_section";
+        const  {element: muscle_group_red, muscleName: muscle } = getMuscleFunction("red");
+        muscle_group_red.classList.remove("opacity_0");
+        if(!muscle_group_red.classList.contains("hovering_muscle"))
+            muscle_group_red.classList.add("hovering_muscle");
+    });
+    muscle_group_Btn.addEventListener("mouseleave",function()
+    {
+        fullbodySection = "quiz_full_body_section";
+        const {element: muscle_group_red, muscle} = getMuscleFunction("red");
+        if(!muscle_group_red.classList.contains("opacity_0"))
+            muscle_group_red.classList.add("opacity_0");
+        muscle_group_red.classList.remove("hovering_muscle");
+    });
+}  
+
+var CorrentAnswers = [];
+
+function CheckAnswer()
+{
+    const eExercise = document.querySelector("#quiz_content > div :not(.display_none)");
+    const eOptions = document.querySelectorAll(".chosen_option");
+    var iExerciseCount = 0;
+    var iExerciseMatchCount = 0;
+    CorrentAnswers.length= 0;
+    eExercise.classList.forEach(className =>
+    {
+        if(className.includes("exercises_"))
+        {
+            iExerciseCount++;
+            CorrentAnswers.push(className.replace("exercises_",""));
+        }
+        eOptions.forEach(eOption =>
+            {
+                if(className.replace("exercises_","") == eOption.classList[1].replace("option_",""))
+                    iExerciseMatchCount++;
+            });
+    });
+    if(iExerciseCount == 0 && iExerciseMatchCount == 0)
+        return false;
+    return iExerciseCount == iExerciseMatchCount;
+}
+
+function CorrectAnswer()
+{
+    
+}
+function WrongAnswer()
+{
+
+}
+
+const bQuizAnswer = document.getElementById("quiz_answer");
+bQuizAnswer.addEventListener("click", function()
+{
+    if(CheckAnswer())
+    {
+
+    }
+    else
+    {
+
+    }
+})
+
+QuizRandomizeExercise();
+
+
 }
 const sWhystayfit = document.getElementById("whystayfit");
 const sSubtopic = document.getElementById("subtopics");
@@ -594,7 +791,6 @@ eNav_bulkcut.addEventListener("click", function()
 
 eNav_extras.addEventListener("click",function()
 {
-    console.log("??");
     HideAllPages();
     ShowPage(sExtras);
 })
