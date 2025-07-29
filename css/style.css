@@ -183,6 +183,10 @@
 {
     overflow: auto;
 }
+.hide_scroll::-webkit-scrollbar
+{
+    display: none;
+}
 .object_fit_cover 
 {
     object-fit: cover;
@@ -1004,6 +1008,14 @@
 {
     transform: translate(-50%, -50%);
 }
+.translate_x_y-50\[\%\]-100\[\%\]
+{
+    transform: translate(-50%, -100%);
+}
+.translate_x_y-50\[\%\]100\[\%\]
+{
+    transform: translate(-50%, 100%);
+}
 .translate_x-100\[\%\] 
 {
     transform: translateX(-100%);
@@ -1055,6 +1067,10 @@
 .h_200\[px\]
 {
     height: 200px;
+}
+.h_400\[px\]
+{
+    height: 400px;
 }
 .h_900\[px\]
 {
@@ -1137,6 +1153,10 @@
 .w_100\[px\]
 {
     width: 100px;
+}
+.w_120\[px\]
+{
+    width: 120px;
 }
 .w_500\[px\]
 {
@@ -2089,11 +2109,14 @@
     height: 95px;
     width: 95px;
 }
-#muscle_group_content,
-#quiz_content
-
+#muscle_group_content
 {
     padding-top: 45px;
+}
+#quiz_content
+{
+    padding-top: 30px;
+    width: 500px;
 }
 #muscle_group_content div,
 #quiz_content div
@@ -2113,6 +2136,7 @@
     padding-left: 55px;
     padding-top: 10px;
     padding-bottom: 20px;
+    padding-right: 55px;
     font-size: 22px;
     font-family: var(--font-display);
     background-color: var(--white);
