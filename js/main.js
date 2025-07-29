@@ -101,7 +101,6 @@ function Selectbulkcut()
 }
 function Load_Subtopic_page()
 {
-    {
             // content_grid_name = "None";
             // const params = new URLSearchParams(window.location.search);
             // const topic = params.get("topic");
@@ -151,7 +150,6 @@ function Load_Subtopic_page()
             // if(disableTopic)
             //     disableTopic.classList.remove("display_none");
 
-        }
 
 }
 { // Cards
@@ -245,18 +243,318 @@ function Load_Subtopic_page()
 
 
 }
+    
+{   // Extra Init
+    const dMuscleGroup = document.getElementById("muscle_group");
+    const dQuiz = document.getElementById("quiz");
+    function HideAllExtras()
+    {
+        if(!dMuscleGroup.classList.contains("display_none"))
+            dMuscleGroup.classList.add("display_none");
+        if(!dQuiz.classList.contains("display_none"))
+            dQuiz.classList.add("display_none");
+    }
+
+    const quiz_selection_btn = document.getElementById("quiz_btn");
+    const musclegroup_selection_btn = document.getElementById("musclegroup_btn");
+    quiz_selection_btn.addEventListener("click", function()
+    {
+        if(quiz_selection_btn.classList.contains("selected_btn"))
+            return;
+        musclegroup_selection_btn.classList.remove("selected_btn");
+        quiz_selection_btn.classList.add("selected_btn");
+        HideAllExtras();
+        dQuiz.classList.remove("display_none");
+    });
+    musclegroup_selection_btn.addEventListener("click", function()
+    {
+        if(musclegroup_selection_btn.classList.contains("selected_btn"))
+            return;
+        quiz_selection_btn.classList.remove("selected_btn");
+        musclegroup_selection_btn.classList.add("selected_btn");
+        HideAllExtras();
+        dMuscleGroup.classList.remove("display_none");
+    });
+    const sideFront = "front";
+    const sideBack = "back";
+    let fullbodySection = "muscle_group_full_body_section";
+
+function GetMuscleElement(fullbodySection, side, muscle, prefix)
+{
+    const element = document.querySelector("#"+fullbodySection+" ."+side+'_'+muscle+'_'+prefix);
+    const muscleName = side+'_'+muscle;
+    return {element, muscleName};
+}
+function GetFrontTraps(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "traps",prefix);
+}
+function GetFrontForearms(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "forearms",prefix);
+}
+function GetFrontBiceps(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "biceps",prefix);
+}
+function GetFrontDelts(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "delts",prefix);
+}
+function GetFrontPecs(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "pecs",prefix);
+}
+function GetFrontObliques(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "obliques",prefix);
+}
+function GetFrontAbdominals(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "abdominals",prefix);
+}
+function GetFrontQuads(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "quads",prefix);
+}
+function GetFrontCalfs(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideFront, "calfs",prefix);
+}
+function GetBackTraps(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "traps",prefix);
+}
+function GetBackForearms(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "forearms",prefix);
+}
+function GetBackTriceps(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "triceps",prefix);
+}
+function GetBackReardelts(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "delts",prefix);
+}
+function GetBackLowerback(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "lowerback",prefix);
+}
+function GetBackUpperback(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "upperback",prefix);
+}
+function GetBackLats(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "lats",prefix);
+}
+function GetBackGlutes(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "glutes",prefix);
+}
+function GetBackHamstring(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "hamstring",prefix);
+}
+function GetBackCalfs(prefix)
+{
+    return GetMuscleElement(fullbodySection, sideBack, "calfs",prefix);
+}
+function HideHighlight(highlight)
+{
+    // if (!highlight) return; // safety check
+    // if(highlight.classList.contains("opacity_0"))
+    //     return;
+    // highlight.classList.add("opacity_0");
+}
+function HideAllHighlights()
+{
+    // let red;
+    // red = GetFrontTraps("red");
+    // HideHighlight(red);
+    // red = GetFrontBiceps("red");
+    // HideHighlight(red);
+    // red = GetFrontDelts("red");
+    // HideHighlight(red);
+    // red = GetFrontAbdominals("red");
+    // HideHighlight(red);
+    // red = GetFrontCalfs("red");
+    // HideHighlight(red);
+    // red = GetFrontForearms("red");
+    // HideHighlight(red);
+    // red = GetFrontObliques("red");
+    // HideHighlight(red);
+    // red = GetFrontQuads("red");
+    // HideHighlight(red);
+    // red = GetFrontPecs("red");
+    // HideHighlight(red);
+
+    // red = GetBackTraps("red");
+    // HideHighlight(red);
+    // red = GetBackLats("red");
+    // HideHighlight(red);
+    // red = GetBackReardelts("red");
+    // HideHighlight(red);
+    // red = GetBackTriceps("red");
+    // HideHighlight(red);
+    // red = GetBackForearms("red");
+    // HideHighlight(red);
+    // red = GetBackLowerback("red");
+    // HideHighlight(red);
+    // red = GetBackUpperback("red");
+    // HideHighlight(red);
+    // red = GetBackGlutes("red");
+    // HideHighlight(red);
+    // red = GetBackHamstring("red");
+    // HideHighlight(red);
+    // red = GetBackCalfs("red");
+    // HideHighlight(red);
+}
+function RemoveAllMuscleSelection()
+{
+    let muscles = document.querySelectorAll(".muscle_selected");
+    muscles.forEach(muscle => {
+            muscle.classList.remove("muscle_selected");
+    });
+}
+function MuscleGroupBtn_Event(getMuscleFunction)
+{
+    let {element: muscle_red, muscleName: muscle} = getMuscleFunction("red");
+
+    if(muscle_red.classList.contains("muscle_selected"))
+    {
+        RemoveAllMuscleSelection();
+    HideAllExercise();
+        return;
+    }
+    RemoveAllMuscleSelection();
+    muscle_red.classList.add("muscle_selected");
+    currentMuscle_Group_Selected = muscle;
+    console.log(currentMuscle_Group_Selected);
+    HideAllExercise();
+    SearchExerciseByName(currentMuscle_Group_Selected);
+    // HideAllHighlights();
+}
+function InitaliseMuscleGroupBtn(getMuscleFunction)
+{
+    fullbodySection = "muscle_group_full_body_section";
+    const {element: muscle_group_Btn, muscleName: muscle } = getMuscleFunction("btn");
+    muscle_group_Btn.classList.add("opacity_0");
+    muscle_group_Btn.addEventListener("click", function()
+    {
+        fullbodySection = "muscle_group_full_body_section";
+        MuscleGroupBtn_Event(getMuscleFunction);
+    });
+    muscle_group_Btn.addEventListener("mouseenter",function()
+    {
+        fullbodySection = "muscle_group_full_body_section";
+        const  {element: muscle_group_red, muscleName: muscle } = getMuscleFunction("red");
+        muscle_group_red.classList.remove("opacity_0");
+        if(!muscle_group_red.classList.contains("hovering_muscle"))
+            muscle_group_red.classList.add("hovering_muscle");
+    });
+    muscle_group_Btn.addEventListener("mouseleave",function()
+    {
+        fullbodySection = "muscle_group_full_body_section";
+        const {element: muscle_group_red, muscle} = getMuscleFunction("red");
+        if(!muscle_group_red.classList.contains("opacity_0"))
+            muscle_group_red.classList.add("opacity_0");
+        muscle_group_red.classList.remove("hovering_muscle");
+    });
+}   
+    fullbodySection = "muscle_group_full_body_section";
+    var currentSide = "back";
+    var currentMuscle_Group_Selected;
+    HideAllHighlights();
+    InitaliseMuscleGroupBtn(GetFrontTraps);
+    InitaliseMuscleGroupBtn(GetFrontPecs);
+    InitaliseMuscleGroupBtn(GetFrontDelts);
+    InitaliseMuscleGroupBtn(GetFrontAbdominals);
+    InitaliseMuscleGroupBtn(GetFrontObliques);
+    InitaliseMuscleGroupBtn(GetFrontBiceps);
+    InitaliseMuscleGroupBtn(GetFrontForearms);
+    InitaliseMuscleGroupBtn(GetFrontQuads);
+    InitaliseMuscleGroupBtn(GetFrontCalfs);
+    
+    InitaliseMuscleGroupBtn(GetBackTraps);
+    InitaliseMuscleGroupBtn(GetBackReardelts);
+    InitaliseMuscleGroupBtn(GetBackUpperback);
+    InitaliseMuscleGroupBtn(GetBackLats);
+    InitaliseMuscleGroupBtn(GetBackTriceps);
+    InitaliseMuscleGroupBtn(GetBackForearms);
+    InitaliseMuscleGroupBtn(GetBackLowerback);
+    InitaliseMuscleGroupBtn(GetBackGlutes);
+    InitaliseMuscleGroupBtn(GetBackHamstring);
+    InitaliseMuscleGroupBtn(GetBackCalfs);
+    
+    const ExerciseElements = document.querySelectorAll("#muscle_group_content > div ");
+
+    function HideAllExercise()
+    {
+        ExerciseElements.forEach(element => {
+            if(!element.classList.contains("display_none"))
+                element.classList.add("display_none");
+        });
+        document.getElementById("muscle_group_header").innerHTML = "Select Muscle Group";
+    }
+    HideAllExercise();
+    
+    function SearchExerciseByName(muscle)
+    {
+        let muscleName = muscle;
+        let displayName = muscleName.replace(currentSide+"_","");
+        muscleName = muscle;
+        if(muscleName == "back_delts")
+            displayName = "rear delts"
+        if(muscleName == "back_lowerback")
+            displayName = "lower back"
+        if(muscleName == "back_upperback")
+            displayName = "upper back"
+        document.getElementById("muscle_group_header").innerHTML = displayName.toUpperCase();
+        muscleName = muscle;
+        let exerciseName = "exercises_"+muscleName.replace(currentSide+"_", "");
+        muscleName = muscle;
+        if(muscleName == "back_delts")
+            exerciseName = "exercises_back_delts";
+        console.log("searching "+ exerciseName)
+        const SearchExercises = document.querySelectorAll("."+exerciseName);
+        SearchExercises.forEach(exerciseElement => {
+            exerciseElement.classList.remove("display_none");
+        });
+    }
+    
+}
 const sWhystayfit = document.getElementById("whystayfit");
 const sSubtopic = document.getElementById("subtopics");
+const sExtras = document.getElementById("extras");
 const eNav_whystayfit = document.getElementById("nav_whystayfit");
 const eNav_weightlift = document.getElementById("nav_weightlift");
 const eNav_calisthenics = document.getElementById("nav_calisthenics");
 const eNav_bulkcut = document.getElementById("nav_bulkcut");
+const eNav_extras = document.getElementById("nav_extras");
+
+function HideAllPages()
+{
+    let pages =  document.querySelectorAll(".page");
+    pages.forEach(page => {
+        if(!page.classList.contains("display_none"))
+        {
+            page.classList.add("display_none")
+        }
+    });
+}
+function ShowPage(page)
+{
+    if(page.classList.contains("display_none"))
+        page.classList.remove("display_none");
+}
+
 eNav_whystayfit.addEventListener("click", function()
 {
-    sWhystayfit.classList.remove("display_none");
-    if(!sSubtopic.classList.contains("display_none"))
-        sSubtopic.classList.add("display_none");
-    
+    HideAllPages();
+    ShowPage(sWhystayfit);
+
     content_grid_name = "whystayfit";
     SetContentGridElement();
     if(content_grid_element)
@@ -270,27 +568,33 @@ eNav_whystayfit.addEventListener("click", function()
 eNav_weightlift.addEventListener("click", function()
 
 {
-    sSubtopic.classList.remove("display_none");
-    if(!sWhystayfit.classList.contains("display_none"))
-        sWhystayfit.classList.add("display_none");
+    HideAllPages();
+    ShowPage(sSubtopic);
+    
     SelectWeightlift();
 }
 )
 eNav_calisthenics.addEventListener("click", function()
 
 {
-    sSubtopic.classList.remove("display_none");
-    if(!sWhystayfit.classList.contains("display_none"))
-        sWhystayfit.classList.add("display_none");
+    HideAllPages();
+    ShowPage(sSubtopic);
+    
     SelectCalisthenics();
 }
 )
 eNav_bulkcut.addEventListener("click", function()
 
 {
-    sSubtopic.classList.remove("display_none");
-    if(!sWhystayfit.classList.contains("display_none"))
-        sWhystayfit.classList.add("display_none");
+    HideAllPages();
+    ShowPage(sSubtopic);
     Selectbulkcut();
 }
 )
+
+eNav_extras.addEventListener("click",function()
+{
+    console.log("??");
+    HideAllPages();
+    ShowPage(sExtras);
+})
