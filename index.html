@@ -1,22 +1,1912 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Prac11</title>
-        <link rel="stylesheet" href="css/prac14demo.css">
-        <script src="js/prac14demo.js" defer></script>
+        <title>RewriteSG</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/main.js" defer></script>
     </head>
+    <body class= "relative bgcolor_darkblue play_intro_body_anim" id = "landing_page">
+        <nav id = "sticky_navigation" class = "shadow_box sticky
+                display_flex_row 
+                justify_content_space_around 
+                align_center
+                border_radius_4[px]
+                border_color_lightblue
+                bgcolor_lightblue
+                left_100[%] 
+                top_10[px]
+                w_75[%]
+                z_layer_3">
+                    <a href="index.html" class="reset_link font_display font_bold text_shadow_dark_strong
+                    padding_top_bottom_16[px]
+                    padding_left_12[px]">Home</a>
+                    <a id ="nav_whystayfit" href="#whystayfit" class="reset_link font_display font_bold">Why Stay Fit</a>
+                    <a id = "nav_weightlift" href="#subtopic" class="reset_link font_display font_bold">Weight-Lift</a>
+                    <a id = "nav_calisthenics" href="#subtopic" class="reset_link font_display font_bold">Calisthenics</a>
+                    <a id = "nav_bulkcut" href="#subtopic" class="reset_link font_display font_bold">Bulk/Cut</a>
+                    <a id = "nav_extras" href="#extras_page" class="reset_link">
+                    <div>
+                        <div class="font_display font_bold text_color_white
+                        padding_10[px] border_radius_4[px] border_style_solid border_color_lightblue">
+                            Muscle Groups
+                        </div>
+                        
+                        <div class = "absolute bgcolor_black- top_0 rotate_40[deg] w_132[px] h_68[px] translate_y-50[%] overflow_hidden "> <!-- Rotate and translate to left-->
+                        <div class="bgcolor_lightsky font_display font_bold
+                        rotate-40[deg] absolute w_100[%] translate_xy-23[%]_60[%] z_layer_4">
+                            <div class="font_display font_bold text_color_black
+                            padding_10[px] border_radius_4[px] border_style_solid border_color_black text_end">
+                                Muscle
+                            </div>
+                        </div>
+                        </div>
+                        <div class = "absolute bgcolor_black- top_0 rotate-40[deg] w_132[px] h_68[px] translate_y-50[%] overflow_hidden "> <!-- Rotate and translate to left-->
+                        <div class="bgcolor_black font_display font_bold
+                        rotate_40[deg] absolute w_100[%] translate_xy_23[%]_60[%] z_layer_5">
+                            <div class="font_display font_bold text_color_lightcyan
+                            padding_10[px] border_radius_4[px] border_style_solid border_color_black">
+                                Quiz
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    </a>
+                    <!-- <a id = "nav_routinebuilder" href="extras.html" class="reset_link font_display font_bold">
+                        <div class="reset_link font_display font_bold bgcolor_black text_color_white
+                        padding_10[px] border_radius_4[px] border_style_solid border_color_black">
+                            Muscle Groups
+                        </div>
+                    </a> -->
+        </nav>
 
-    <body>
-        <header><h1>My Web App!</h1></header>
-        <main>
-        Contents here
-        </main>
-        <footer>
-        <img id="qrCodeImg" src="bin/frame.png" alt="QR Code">
-        </footer>
-    </body> 
+        <nav id="sticky_navigation_mobile" class="shadow_box sticky bgcolor_lightblue display_flex_row justify_content_space_around align_center border_radius_4[px] 
+        border_color_lightblue z_layer_3 align_content_flex_start padding_10[px] w_100[%] top_0 left_0 display_none">
+            <div id="mobile_nav_toggle" class = "bgcolor_darkblue text_color_lightcyan border_radius_4[px] margin_left_auto w_fit_content padding_4[px]">☰</div>
+            <div id="mobile_nav_links" class="display_none">
+                <a href="index.html" class="reset_link font_display font_bold text_shadow_dark_strong padding_top_bottom_16[px] w_100[%]  padding_12[px]">Home</a>
+                <a id="mobile_nav_whystayfit" class="reset_link font_display font_bold  padding_12[px]  w_100[%] text_left">Why Stay Fit</a>
+                <a id="mobile_nav_weightlift" href="#subtopic" class="reset_link font_display font_bold  padding_12[px] w_100[%] text_left ">Weight-Lift</a>
+                <a id="mobile_nav_calisthenics" href="#subtopic" class="reset_link font_display font_bold padding_12[px] w_100[%] text_left">Calisthenics</a>
+                <a id="mobile_nav_bulkcut" href="#subtopic" class="reset_link font_display font_bold  padding_12[px] w_100[%] text_left ">Bulk/Cut</a>
+                <a id="mobile_nav_extras" href="#extras_page" class="reset_link font_display font_bold  padding_12[px] w_100[%] text_left ">Muscle Groups/Quiz</a>
+            </div>
+        </nav>
+        <div class = "bgcolor_darkblue w_100[%] h_fit_content">
+            <div id="index_page_1" class = "relative display_grid grid_template_columns_2fr grid_template_row_1fr margin_top_15[px] padding_top_120[px]">
+                <div id = "index_page_content" class="grid_column_1/2 padding_left_24[px] z_layer_1">
+                    <div id = "credits_panel" class = "shadow_box bgcolor_lightsky_opacity_0_1
+                    display_flex w_fit_content border_radius_4[px] h_fit_content  play_intro_appear_anim">
+                        <p class = "font_display text_color_lightcyan padding_left_8[px] padding_right_80[px] font_size_20[px] margin_8[px]">by Hazwan</p>
+                    </div>
+                    <h2 class = "font_display text_color_white text_shadow_dark_strong font_size_120[px] font_type_normal play_intro_h1_anim">
+                        Fitness
+                    </h2>
+                    <p class = "font_display text_color_white text_shadow_dark_strong font_size_40[px] padding_left_right_16[px] padding_top_100[px] play_intro_h1_anim">
+                        A simple website to help you stay fit, with routines and information on weight-lifting, calisthenics, and more.
+                    </p>
+                    <div id = "index_page_buttons" class = "display_flex_row justify_content_space_around align_center w_fit_content play_intro_appear_anim">
+                        <button id = "index_page_jotaro_btn" class = "font_display font_size_15[px] play_intro_appear_anim
+                        text_color_lightcyan bgcolor_black border_radius_4[px] border_color_lightblue padding_left_right_24[px] padding_top_bottom_16[px]
+                        margin_15[px]">
+                            Jotaro
+                        </button>
+                    </div>
+                </div>
+            
+                <div id = "fitness_image_cropped" class = "overflow_hidden absolute right_0 bottom_0 w_fit_content grid_column_2/3 h_500[px] play_intro_img_anim">
+                    <img src="images/fitness_image1.png" alt="Fitness Image" class="h_100[%] 
+                    w_auto border_radius_4[px] object_fit_cover object_position_center">
+                </div>
+            </div>
+            <footer class = "  play_intro_appear_anim text_center w_100[%] padding_top_50[px] padding_bottom_150[px] font_display font_size_15[px] text_color_white border_4[px] bgcolor_black_opacity_0_8">
+                    Use navigation bar to see more content below
+            </footer>
+        </div>
+        <div id = "whystayfit" class = "display_none page play_intro_appear_anim">
+            <div class = "bgcolor_gradient_down_darkblue-lightblue w_100[%] top_0 h_fit_content">
+                    <div id = "information_page_1">
+                        <div class = "bgcolor_black text_color_lightblue relative">
+                            <h2 class = "w_fit_content translate_x-50[%] padding_right_24[px] font_display font_size_50[px]
+                            text_color_lightblue font_type_normal left_50[%] padding_top_bottom_32[px] relative">Why do we need to stay fit?</h2>
+                            <p class="relative font_display text_color_white padding_24[px] font_size_16[px] padding_bottom_8[px] left_3[%] w_75[%]">
+                                Staying fit isn't just about building muscles — it's about living longer, feeling better, and staying mentally sharp. Here's how fitness impacts different parts of your life:
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "display_grid grid_gap_8[px] ">
+                        <div id = "whystayfit_content_grid" class = "relative display_grid grid_template_columns_200[px]_737[px]_200[px]  grid_gap_2[px] margin_top_15[px]
+                        margin_left_auto margin_right_auto ">
+                            <button class="card_left_btn reset_button"> 
+                                <span class = "bgcolor_black_opacity_0_5 grid_column_1/2 text_color_white  padding_top_bottom_100[%] text_center font_display">
+                                    &lt;
+                                </span>
+                            </button>
+                            <button class="card_right_btn reset_button"> 
+                                <span class = "bgcolor_black_opacity_0_5 grid_column_3/4 text_color_white  padding_top_bottom_100[%] text_center font_display">
+                                    &gt;
+                                </span>
+                            </button>
+                            <!-- <div  class = "relative grid_column_2/3 grid_row_1/2"> -->
+                                <div id = "whystayfit_content_card_1" class = "relative bgcolor_white
+                                border_radius_4[px] 
+                                border_style_solid 
+                                border_color_lightblue
+                                padding_bottom_215[px] content_card grid_column_2/3 grid_row_1/2">
+                                <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] text_center">
+                                Lifespan🫀 
+                                </h2>
+                                <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                    Staying fit can help increase your lifespan by:
+                                </p>
+                                <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  padding_right_24[px] text_center reset_list"> 
+                                    <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal" >Reducing the risk of chronic diseases</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal " >Improving overall health</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Enhancing immune system function</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Improving sleep quality</li>
+                                </ul>
+                                </div>
+                                <div id = "whystayfit_content_card_2" class = "relative bgcolor_white
+                                border_radius_4[px]
+                                border_style_solid
+                                border_color_lightblue
+                                padding_bottom_215[px]  content_card grid_column_2/3 grid_row_1/2">
+                                <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] text_center">
+                                Mental Health🧠
+                                </h2>
+                                <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                    Regular exercise can improve mental health by:
+                                </p>
+                                <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  padding_right_24[px] text_center reset_list"> 
+                                    <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal" >Reducing symptoms of anxiety and depression</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal " >Enhancing mood and overall mental well-being</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Improving focus and cognitive function</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Reducing stress levels through endorphin release</li>
+                                </ul>
+                                </div>
+                                <div id = "whystayfit_content_card_3" class = "relative bgcolor_white 
+                                border_radius_4[px]
+                                border_style_solid
+                                border_color_lightblue
+                                padding_bottom_215[px] content_card grid_column_2/3 grid_row_1/2">
+                                <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] text_center">
+                                Physical Health💪
+                                </h2>
+                                <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                    Staying fit can improve physical health by:
+                                </p>
+                                <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  padding_right_24[px] text_center reset_list"> 
+                                    <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal" >Improving cardiovascular health</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal " >Strengthening muscles and bones</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Enhancing overall physical fitness</li>
+                                    <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal" >Increasing bone density and joint strength</li>
+                                </ul>
+                                </div>
+                            
+                        </div>
+                    
+                    </div>        
+                </div>
+                <div id = "why_stayfit_references" class = "relative grid_row_2/3- padding_right_24[px] bgcolor_lightblue
+                    border_radius_4[px]- border_color_darkblue margin_top_15[px]- border_bottom_4[px] border_style_solid border_0">
+                        <!-- <h2 class = "font_display font_size_30[px] text_color_lightblue text_shadow_dark_strong padding_top_bottom_2[px]">
+                            References
+                        </h2> -->
+                        <ul class="padding_left_24[px] padding_right_24[px]  reset_list margin_top_15[px]-  display_flex flex_direction_row">
+                        <li class="margin_bottom_20[px] padding_12[px] margin_bottom_20[px]  flex_scalable">
+                            <div class="text_color_gray font_size_14[px] margin_4[px]">World Health Organization (WHO)</div>
+                            <div class="font_display_bold font_size_18[px] margin_4[px]">Physical Activity Facts</div>
+                            <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                        </li>
+                        <li class="margin_bottom_20[px] padding_12[px]  margin_bottom_20[px]  flex_scalable">
+                            <div class="text_color_gray font_size_14[px] margin_4[px]">Centers for Disease Control and Prevention (CDC)</div>
+                            <div class="font_display_bold font_size_18[px] margin_4[px]">Physical Activity Basics</div>
+                            <a href="https://www.cdc.gov/physicalactivity/basics/index.htm" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                        </li>
+                        <li class="margin_bottom_20[px] padding_12[px] margin_bottom_20[px] flex_scalable">
+                            <div class="text_color_gray font_size_14[px] margin_4[px]">Mayo Clinic</div>
+                            <div class="font_display_bold font_size_18[px] margin_4[px]">7 Benefits of Regular Exercise</div>
+                            <a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                        </li>
+                        <li class="margin_bottom_20[px] padding_12[px]  margin_bottom_20[px] flex_scalable">
+                            <div class="text_color_gray font_size_14[px] margin_4[px]">Harvard Health</div>
+                            <div class="font_display_bold font_size_18[px] margin_4[px]">The Importance of Fitness</div>
+                            <a href="https://www.health.harvard.edu/exercise-and-fitness/the-importance-of-fitness" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                        </li>
+                        <li class="margin_bottom_20[px] padding_12[px] margin_bottom_20[px] flex_scalable">
+                            <div class="text_color_gray font_size_14[px] margin_4[px]">ACE Fitness</div>
+                            <div class="font_display_bold font_size_18[px] margin_4[px]">Fitness & Wellness Blog</div>
+                            <a href="https://www.acefitness.org/education-and-resources/lifestyle/blog/" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                        </li>
+                        <li class="margin_bottom_20[px] padding_12[px] margin_bottom_20[px]  flex_scalable">
+                            <div class="text_color_gray font_size_14[px] margin_4[px]">Examine.com</div>
+                            <div class="font_display_bold font_size_18[px] margin_4[px]">Evidence-Based Nutrition & Supplement Info</div>
+                            <a href="https://examine.com/" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                        </li>
+                        </ul>
+                </div>
+        </div>
+        <div id = "subtopics" class = "display_none page play_intro_appear_anim">
+            <div class = "relative padding_top_bottom_100[px] bgcolor_gradient_down_darkblue-lightblue">
+                <div id="subtopic_selection" class = "margin_top_bottom_50[px] w_100[%] padding_top_bottom_50[px] bgcolor_black_opacity_0_25">
+                    <h2 class = "font_display font_size_30[px] text_color_lightblue text_shadow_dark_strong text_center padding_top_bottom_2[px]">
+                        Select a subtopic to learn more
+                    </h2>
+                    <div class = "display_grid grid_gap_8[px] padding_left_right_24[px] ">
+                        <button id = "weightlift_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_1/2 w_100[%]
+                        overflow_hidden relative reset_button selection_btn">
+                            <span class = "absolute font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%]  font_bold">
+                                Weight-Lifting
+                            </span>
+                            <img src="images/dumbbell.jpg" alt="dumbell Image" class="h_200[%] 
+                            w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                        </button>
+                        <button id = "calisthenics_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_2/3 w_100[%]
+                        overflow_hidden relative  reset_button selection_btn">
+                            <span class = "absolute font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%] font_bold">
+                                Calisthenics
+                            </span>
+                            <img src="images/pullups.jpg" alt="pullups Image" class="h_200[%] 
+                            w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                        </button>
+                        <button id = "bulkcut_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_3/4 w_100[%]
+                        overflow_hidden relative  reset_button selection_btn">
+                            <span class = "absolute font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%] font_bold">
+                                Bulk/Cut
+                            </span>
+                            <img src="images/CalorieDeficit.jpg" alt="pullups Image" class="h_200[%] 
+                            w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <main id="main_content" class = "relative">
+                <div id = "subtopic_content" class = "relative">
+                    <div id ="weightlift_content_grid" class = "display_grid play_intro_appear_anim">
+                        <div class = "relative bgcolor_gradient_down_lightblue-lightsky  w_100[%]">
+                            <div id = "weightlift_content_card_grid" class = "relative display_grid grid_template_columns_200[px]_737[px]_200[px] w_fit_content grid_column_1/2 grid_gap_2[px] margin_top_15[px]-
+                            margin_left_auto margin_right_auto">
+                                <button class="card_left_btn reset_button"> 
+                                    <span class = "bgcolor_black_opacity_0_5 grid_column_1/2 text_color_white  padding_top_bottom_100[%] text_center font_display">
+                                        &lt;
+                                    </span>
+                                </button>
+                                <button class="card_right_btn reset_button"> 
+                                    <span class = "bgcolor_black_opacity_0_5 grid_column_3/4 text_color_white  padding_top_bottom_100[%] text_center font_display">
+                                        &gt;
+                                    </span>
+                                </button>
+                                <div id = "weightlift_content_card_1" class = "relative grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative 
+                                    bgcolor_white
+                                    border_radius_4[px] 
+                                    border_style_solid 
+                                    border_color_darkblue
+                                    padding_bottom_215[px] 
+                                    padding_left_right_16[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        What Is Weightlifting?
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        Weightlifting, also known as resistance training or strength training, involves using weights to improve muscle strength and endurance. 
+                                        It can be done with free weights, machines, or bodyweight exercises.
+                                        <br>Benefits:
+                                    </p>
+                                    <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  text_center reset_list"> 
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center " >
+                                            Increases muscle strength and size
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center ">
+                                            Improves bone density
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                            Enhances metabolism and fat loss
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div id = "weightlift_content_card_2" class = "relative grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative 
+                                    bgcolor_white
+                                    border_radius_4[px] 
+                                    border_style_solid 
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px] ">
+                                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                            Why Weightlifting?
+                                        </h2>
+                                        <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                            It builds lean muscle, increases metabolism, and improves bone density and joint strength, <br> also
+                                            Enhances posture, balance, brain health, and mental well-being
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id = "weightlift_content_card_3" class = "relative grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative 
+                                    bgcolor_white
+                                    border_radius_4[px] 
+                                    border_style_solid 
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px] ">
+                                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                            Getting Started
+                                        </h2>
+                                        <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                            Start with basic exercises like squats, deadlifts, bench presses, and rows, Also begin with light weights to master form and technique.
+                                            <br>Focus on compound movements that work multiple muscle groups.
+                                            <br>Gradually increase weight and intensity as you become more comfortable.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id = "weightlift_content_card_4" class = "relative grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative 
+                                    bgcolor_white
+                                    border_radius_4[px] 
+                                    border_style_solid 
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px] ">
+                                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                            Starter Routine
+                                        </h2>
+                                        <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                            A beginner's routine could include:
+                                        </p>
+                                        <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  text_center reset_list"> 
+                                            <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center " >
+                                                Squats: 3 sets of 8-12 reps
+                                            </li>
+                                            <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center ">
+                                                Bench Press: 3 sets of 8-12 reps
+                                            </li>
+                                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                                Bent-over Rows: 3 sets of 8-12 reps
+                                            </li>
+                                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                                Deadlifts: 3 sets of 8-12 reps
+                                            </li>
+                                        </ul>   
+                                        <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                            When you are comfortable with the above, you can focus on parts of the body, such as:
+                                        </p>
+                                        <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  text_center reset_list"> 
+                                            <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center " >
+                                                Chest: Bench Press, Incline Dumbbell Press
+                                            </li>
+                                            <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center ">
+                                                Back: Pull-ups, Bent-over Rows
+                                            </li>
+                                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                                Legs: Squats, Lunges
+                                            </li>
+                                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                                Shoulders: Overhead Press, Lateral Raises
+                                            </li>
+                                            <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                                Arms: Bicep Curls, Tricep Dips
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id = "weightlift_content_card_5" class = "relative
+                                    grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative 
+                                    bgcolor_white
+                                    border_radius_4[px] 
+                                    border_style_solid 
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px] ">
+                                        <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                            Equipment & Gym Options (SG)
+                                        </h2>
+                                        <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                            In Singapore, you can find well-equipped gyms like Anytime Fitness, Pure Fitness, and Fitness First. <br>
+                                            <a href= "https://activesg.gov.sg/home" target="_blank" class = "text_color_lightblue"> ActiveSG</a> also offers affordable gym memberships at various locations.
+                                            <br>These gyms offer a range of equipment including free weights, machines, and functional training areas.
+                                            <br>Alternatively, you can invest in basic home equipment like dumbbells, resistance bands, and a bench to start your weightlifting journey at home.
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                            <footer id = "weightlift_references" class = " w_100[%]">
+                                <div  class = "relative grid_row_2/3- padding_right_24[px] bgcolor_lightsky
+                                    border_radius_4[px]- border_color_darkblue margin_top_15[px]- border_bottom_4[px] border_style_solid border_0">
+                                        <ul class="reference-list display_flex flex_direction_row reset_list">
+                                            <li class="flex_scalable padding_12[px] margin_bottom_20[px] ">
+                                                <div class="text_color_gray font_size_14[px]">The Guardian</div>
+                                                <div class="font_display_bold font_size_18[px]">How to Start Weightlifting (Beginner Tips)</div>
+                                                <a href="https://www.theguardian.com/wellness/2025/jan/09/weightlifting-tips-beginner-strength-training" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                            </li>
+                                            <li class="flex_scalable padding_12[px] margin_bottom_20[px] ">
+                                                <div class="text_color_gray font_size_14[px]">New York Times / Harvard</div>
+                                                <div class="font_display_bold font_size_18[px]">Benefits of Weightlifting for Health & Longevity</div>
+                                                <a href="https://www.teenvogue.com/story/benefits-lifting-weights" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                            </li>
+                                            <li class="flex_scalable padding_12[px] margin_bottom_20[px]">
+                                                <div class="text_color_gray font_size_14[px]">Real Simple / Self</div>
+                                                <div class="font_display_bold font_size_18[px]">Beginner Strength Moves & Getting Started Guide</div>
+                                                <a href="https://www.self.com/gallery/essential-weight-lifting-moves-for-beginners" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                            </li>
+                                            <li class="flex_scalable padding_12[px] margin_bottom_20[px] ">
+                                                <div class="text_color_gray font_size_14[px]">Crossrope / Lifestyle Asia</div>
+                                                <div class="font_display_bold font_size_18[px]">Strength Training Benefits & Regional SG Guide</div>
+                                                <a href="https://www.lifestyleasia.com/sg/beauty-grooming/wellness/complete-guide-to-weight-training-for-beginners/" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                            </li>
+                                        </ul>
+                                </div>
+                            </footer>
+                    </div>        
+                    
+                    </div>
+                    <div id = "calisthenics_content_grid" class = "display_grid play_intro_appear_anim">
+                        <div class = "relative bgcolor_gradient_down_lightblue-lightsky  w_100[%]">
+                            <div id = "calisthenics_content_card_grid" class = "relative display_grid grid_template_columns_200[px]_737[px]_200[px] w_fit_content grid_column_1/2 grid_gap_2[px] margin_top_15[px]-
+                            margin_left_auto margin_right_auto">
+                                <button class="card_left_btn reset_button"> 
+                                    <span class = "bgcolor_black_opacity_0_5 grid_column_1/2 text_color_white  padding_top_bottom_100[%] text_center font_display">
+                                        &lt;
+                                    </span>
+                                </button>
+                                <button class="card_right_btn reset_button"> 
+                                    <span class = "bgcolor_black_opacity_0_5 grid_column_3/4 text_color_white  padding_top_bottom_100[%] text_center font_display">
+                                        &gt;
+                                    </span>
+                                </button>
+                                <div id = "calisthenics_content_card_1" class = "relative
+                                grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative 
+                                    bgcolor_white
+                                    border_radius_4[px] 
+                                    border_style_solid 
+                                    border_color_darkblue
+                                    padding_bottom_215[px] 
+                                    padding_left_right_16[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        What Is Calisthenics?
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        Calisthenics is a form of exercise that uses body weight for resistance, focusing on movements like push-ups, pull-ups, squats, and planks.
+                                        <br>Benefits:
+                                    </p>
+                                    <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  text_center reset_list"> 
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center " >
+                                            Improves strength, flexibility, and endurance
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center ">
+                                            Enhances body control and coordination
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                            Can be done anywhere with no equipment needed
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div id = "calisthenics_content_card_2" class = "relative grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative 
+                                    bgcolor_white
+                                    border_radius_4[px]
+                                    border_style_solid 
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        Why Practice Calisthenics?
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        It builds functional strength, improves mobility, and enhances overall fitness.
+                                        It also burns calories efficiently, supports fat loss, and improves cardiovascular health 
+                                        <br>Also, it is accessible to all fitness levels and can be adapted to individual needs.
+                                    </p>
+                                    </div>
+                                </div>
+                                <div id = "calisthenics_content_card_3" class = "relative grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative
+                                    bgcolor_white
+                                    border_radius_4[px]
+                                    border_style_solid
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        Getting Started
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        Start with basic movements like push-ups, squats, and planks.
+                                        <br>Focus on mastering form and technique before progressing to advanced variations.
+                                        <br>Gradually increase difficulty by adding reps, sets, or variations like one-arm push-ups or pistol squats.
+                                    </p>
+                                    </div>
+                                </div>
+                                <div id = "calisthenics_content_card_4" class = "relative grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative
+                                    bgcolor_white
+                                    border_radius_4[px]
+                                    border_style_solid
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        Sample Routine
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        A beginner's routine could include:
+                                    </p>
+                                    <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  text_center reset_list"> 
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center " >
+                                            Push-ups: 3 sets of 8-12 reps
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center ">
+                                            Bodyweight Squats: 3 sets of 10-15 reps
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                            Planks: 3 sets of 30-60 seconds
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                            Pull-ups or Assisted Pull-ups: 3 sets of 5-10 reps
+                                        </li>
+                                    </ul>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        As you progress, you can incorporate more advanced movements like muscle-ups, handstand push-ups, and planches.
+                                    </p>
+                                    </div>
+                                </div>
+                                <div id = "calisthenics_content_card_5" class = "relative
+                                    grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div  class = "relative
+                                    bgcolor_white
+                                    border_radius_4[px]
+                                    border_color_darkblue
+                                    border_style_solid
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        Local Access
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue font_size_20[px]
+                                    [px] text_center">
+                                        In Singapore, you can find outdoor calisthenics parks at locations like East Coast Park, Bishan-Ang Mo Kio Park, and Marina Bay.
+                                        <br>Great option if you prefer no-cost training and community vibe.
+                                        <br>These parks have bars and equipment for bodyweight exercises.
+                                        <br>For Example:
+                                    </p>
+                                    <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  text_center reset_list"> 
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center " >
+                                            Dip bars.
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center ">
+                                            Pull-up bars.
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                            Parallel bars.
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                            Monkey bars.
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
 
+                            </div>
+                            <footer id = "calisthenics_references" class = " w_100[%]">
+                                <div  class = "relative grid_row_2/3- padding_right_24[px] bgcolor_lightsky
+                                    border_radius_4[px]- border_color_darkblue margin_top_15[px]- border_bottom_4[px] border_style_solid border_0">
+                                    <ul class="reference-list display_flex flex_direction_row reset_list">
+                                        <li class="flex_scalable padding_12[px] margin_bottom_20[px]">
+                                        <div class="text_color_gray font_size_14[px]">CityNomads / TechBullion</div>
+                                            <div class="font_display_bold font_size_18[px]">Beginner's Guide to Strength & Functional Bodyweight Training</div>
+                                            <a href="https://citynomads.com/your-beginners-guide-to-lifting-and-strength-training/" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>  </li>
+                                        <li class="flex_scalable padding_12[px] margin_bottom_20[px]">
+                                        <div class="text_color_gray font_size_14[px]">ActiveSG Circle</div>
+                                            <div class="font_display_bold font_size_18[px]">Calisthenics: The Ultimate Guide (Everything You Need To Know) </div>
+                                            <a href="https://www.activesgcircle.gov.sg/read/calisthenics-the-ultimate-guide-everything-you-need-to-know" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div id = "bulkcut_content_grid" class = "display_grid play_intro_appear_anim">
+                        <div class = "relative
+                        bgcolor_gradient_down_lightblue-lightsky  w_100[%]">
+                            <div id = "bulkcut_content_card_grid" class = "relative display_grid grid_template_columns_200[px]_737[px]_200[px] w_fit_content grid_column_1/2 grid_gap_2[px] margin_top_15[px]-
+                            margin_left_auto margin_right_auto">
+                                <button class="card_left_btn reset_button"> 
+                                    <span class = "bgcolor_black_opacity_0_5 grid_column_1/2 text_color_white  padding_top_bottom_100[%] text_center font_display">
+                                        &lt;
+                                    </span>
+                                </button>
+                                <button class="card_right_btn reset_button"> 
+                                    <span class = "bgcolor_black_opacity_0_5 grid_column_3/4 text_color_white  padding_top_bottom_100[%] text_center font_display">
+                                        &gt;
+                                    </span>
+                                </button>
+                                <div id = "bulkcut_content_card_1" class = "relative
+                                grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div class = "relative
+                                    bgcolor_white
+                                    border_radius_4[px]
+                                    border_style_solid 
+                                    border_color_darkblue
+                                    padding_bottom_215[px]
+                                    padding_left_right_16[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        What Is Bulk/Cut?
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        Bulk/Cut refers to the two phases of body composition training:
+                                        <br>Bulking focuses on gaining muscle mass, while cutting aims to reduce body fat while preserving muscle.
+                                        <br>Benefits:
+                                    </p>
+                                    <ul class = "font_display font_bold font_size_20[px] text_color_darkblue  text_center reset_list"> 
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center " >
+                                            Allows for controlled muscle gain and fat loss
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue  font_type_normal text_center ">
+                                            Helps achieve a defined physique
+                                        </li>
+                                        <li class = "font_display font_size_20[px] text_color_darkblue   font_type_normal text_center ">
+                                            Provides a structured approach to body composition
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div id = "bulkcut_content_card_2" class = "relative
+                                grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div class = "relative
+                                    bgcolor_white
+                                    border_radius_4[px]
+                                    border_style_solid
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue
+                                    blue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        Why Bulk/Cut?
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        It allows for strategic muscle gain and fat loss, helping you achieve your desired physique.
+                                        <br>Bulking provides the necessary calories and nutrients for muscle growth, while cutting focuses on fat loss without sacrificing muscle.
+                                        <br>It is a common approach among bodybuilders and fitness enthusiasts.
+                                    </p>
+                                    </div>
+                                </div>
+                                <div id = "bulkcut_content_card_3" class = "relative
+                                grid_column_2/3 grid_row_1/2 w_737[px]- content_card">
+                                    <div class = "relative
+                                    bgcolor_white
+                                    border_radius_4[px]
+                                    border_style_solid
+                                    border_color_darkblue
+                                    padding_left_right_16[px]
+                                    padding_bottom_215[px]">
+                                    <h2 class = "font_display font_size_30[px] text_color_darkblue text_shadow_dark_strong padding_top_50[px] padding_bottom_16[px] text_center">
+                                        How to Bulk/Cut?
+                                    </h2>
+                                    <p class="font_display font_bold text_color_darkblue  font_size_20[px] text_center">
+                                        To bulk, consume a calorie surplus with a focus on protein and strength training.
+                                        During a bulk, Moderate surplus (~300-500 kcal/day), protein ~1.3-1.8 g per kg body weight, strength workouts 3-5x/week
+                                        <br>To cut, create a calorie deficit while maintaining high protein intake and continuing strength training.
+                                        During a cut, it is best to do light cardio, gradually decrease calories and monitor progress
+                                        <br>Monitor progress and adjust nutrition and training as needed.
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer id = "bulkcut_references" class = " w_100[%]">
+                            <div  class = "relative grid_row_2/3- padding_right_24[px] bgcolor_lightsky
+                                border_radius_4[px]- border_color_darkblue margin_top_15[px]- border_bottom_4[px] border_style_solid border_0">
+                                <ul class="reference-list display_flex flex_direction_row reset_list">
+                                <li class="flex_scalable padding_12[px] margin_bottom_20[px]">
+                                    <div class="text_color_gray font_size_14[px]">Healthline</div>
+                                    <div class="font_display_bold font_size_18[px]">What Is Bulking? Pros, Cons & Tips</div>
+                                    <a href="https://www.healthline.com/nutrition/bulking" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                </li>
+                                <li class="flex_scalable padding_12[px] margin_bottom_20[px]">
+                                    <div class="text_color_gray font_size_14[px]">Pure Fitness Blog</div>
+                                    <div class="font_display_bold font_size_18[px]">A Beginner's Guide to Bulking and Cutting</div>
+                                    <a href="https://www.purefitness.com/blogs/a-beginners-guide-to-bulking-and-cutting" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                </li>
+                                <li class="flex_scalable padding_12[px] margin_bottom_20[px]">
+                                    <div class="text_color_gray font_size_14[px]">Bony to Beastly</div>
+                                    <div class="font_display_bold font_size_18[px]">A Beginner's Guide to Bulking & Cutting</div>
+                                    <a href="https://bonytobeastly.com/a-beginners-guide-to-bulking-cutting/" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                </li>
+                                <li class="flex_scalable padding_12[px] margin_bottom_20[px]">
+                                    <div class="text_color_gray font_size_14[px]">Medical News Today</div>
+                                    <div class="font_display_bold font_size_18[px]">What is a Cutting Diet & How to Follow It</div>
+                                    <a href="https://www.medicalnewstoday.com/articles/cutting-diet" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                                </li>
+                                </ul>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <section id = "extras" class = "page display_none play_intro_appear_anim">
+
+            <div  class = "relative padding_top_bottom_10[px] bgcolor_gradient_down_darkblue-lightblue">
+                <div id="extra_selection" class = "w_100[%] padding_top_bottom_50[px] bgcolor_black_opacity_0_25-">
+                    <!-- <h2 class = "font_display font_size_30[px] text_color_lightblue text_shadow_dark_strong text_center padding_top_bottom_2[px]">
+                    </h2> -->
+                    <div class = "display_grid grid_gap_8[px] padding_left_right_24[px]">
+                        <button id = "quiz_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_1/2 w_100[%]
+                        overflow_hidden relative  reset_button selection_btn">
+                            <span class = "absolute reset_button font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%] font_bold">
+                                Quiz
+                            </span>
+                            <img src="images/pullups.jpg" alt="pullups Image" class="h_200[%] 
+                            w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                        </button>
+                        <button id = "musclegroup_btn" class = "bgcolor_lightblue text_color_black font_display font_size_20[px] border_radius_4[px] grid_column_2/3 w_100[%]
+                        overflow_hidden relative reset_button selection_btn">
+                            <span class = "absolute reset_button font_display font_size_30[px] text_color_white text_shadow_dark_strong text_center translate_xy-50[%] left_50[%] top_50[%]  font_bold">
+                                Muscle Group Workouts
+                            </span>
+                            <img src="images/dumbbell.jpg" alt="dumbell Image" class="h_200[%] 
+                            w_auto border_radius_4[px] object_fit_cover object_position_center opacity_0_5">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id = "muscle_group" class = "display_none">
+                <div class = "padding_top_bottom_50[px] bgcolor_black font_display_bold text_center text_color_lightcyan font_bold font_size_50[px]">
+                    Muscle Groups
+                </div>
+                <section class = "relative bgcolor_gradient_down_lightgray_gray relative padding_top_15[px] display_flex_row h_fit_content
+                flex_wrap">
+                    <div id = "muscle_group_full_body_section" class = "full_body relative bgcolor_white w_fit_content h_fit_content
+                    border_radius_70[px] border_thickness_5[px] border_style_solid overflow_hidden flex_grow_1 ">
+                        <div class = "front_body relative w_fit_content h_fit_content display_none margin_left_auto margin_right_auto">
+                            <div class = "front_fullbody w_fit_content h_fit_content">
+                                <div class = "overflow_hidden relative full_body_art_frame">
+                                    <img src="images/ArtBody-Sheet.png" alt="" class="front_full">
+                                </div>
+                                <div  class = " front_traps_btn w_0 h_0">
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                </div>
+                                <div class = " front_delts_btn w_0 h_0">
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                </div>
+                                <div  class = " front_biceps_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div class = " front_forearms_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_pecs_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_abdominals_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_obliques_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_quads_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_calfs_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class = " front_traps_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_traps">
+                                </div>
+                            </div>
+                            <div  class = " front_forearms_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_forearms">
+                                </div>
+                            </div>
+                            <div  class = " front_biceps_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_biceps">
+                                </div>
+                            </div>
+                            <div  class = " front_delts_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_delts">
+                                </div>
+                            </div>
+                            <div  class = " front_pecs_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_pecs">
+                                </div>
+                            </div>
+                            <div  class = " front_obliques_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_obliques">
+                                </div>
+                            </div>
+                            <div  class = " front_abdominals_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_abdominals">
+                                </div>
+                            </div>
+                            <div  class = " front_quads_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_quads">
+                                </div>
+                            </div>
+                            <div  class = " front_calfs_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_calfs">
+                                </div>
+                            </div>
+                                        
+                        </div>
+                        <div class = "back_body relative w_fit_content h_fit_content margin_left_auto margin_right_auto">
+                            <div class = "back_fullbody w_fit_content h_fit_content">
+                                <div class = "overflow_hidden relative full_body_art_frame">
+                                    <img src="images/ArtBody-Sheet.png" alt="" class="back_full">
+                                </div>
+                                <div  class = " back_traps_btn w_0 h_0">
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                </div>
+                                <div  class = " back_delts_btn w_0 h_0">
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                </div>
+                                <div  class = " back_triceps_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_forearms_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_lats_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_upperback_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_lowerback_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_glutes_btn  w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_hamstring_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_calfs_btn  w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                            </div>
+                            <div  class = " back_traps_red   w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_traps">
+                                </div>
+                            </div>
+                            <div  class = " back_forearms_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_forearms">
+                                </div>
+                            </div>
+                            <div  class = " back_triceps_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_triceps">
+                                </div>
+                            </div>
+                            <div  class = " back_delts_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_rear_delts">
+                                </div>
+                            </div>
+                            <div  class = " back_lowerback_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_lower_back">
+                                </div>
+                            </div>
+                            <div  class = " back_upperback_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_upper_back">
+                                </div>
+                            </div>
+                            <div  class = " back_lats_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_lats">
+                                </div>
+                            </div>
+                            <div  class = " back_glutes_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_glutes">
+                                </div>
+                            </div>
+                            <div  class = " back_hamstring_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_hamstring">
+                                </div>
+                            </div>
+                            <div  class = " back_calfs_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_calfs">
+                                </div>
+                            </div>
+                        </div>
+                        <button class = "toggle_body absolute bgcolor_black font_display font_bold text_color_white font_size_30[px]">
+                            Flip
+                        </button>
+                    </div>
+                    <div class = "bgcolor_black- relative display_grid grid_template_rows_90[px] flex_grow_1 flex_shrink_1"> 
+                        <div class = "border_color_black- border_style_solid- border_radius_70[px] bgcolor_darkblue grid_row_1/2 grid_column_1/2">
+                            <h2 id = "muscle_group_header" class = "font_display font_size_30[px] text_color_lightblue font_bold text_center padding_top_bottom_20[px]">Select Muscle Group</h2>
+                        </div>
+                        <div id = "muscle_group_content" class = "overflow_scroll bgcolor_gray- grid_row_2/3 grid_column_1/2 margin_10[px] h_auto">
+                            
+                            <div class="exercises_traps workout_weightlift bgcolor_white">
+                                <h3>Barbell Shrugs</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src = "images/Barbell-Shrug.gif" alt="Barbell Shrug exercise" class = "flex_grow_1 flex_shrink_1">
+                                    <img src = "images/Barbell-Shrug1.webp" alt="Barbell Shrug Exercise" class = "flex_grow_1 flex_shrink_1">
+                                </div>
+                                <p>Strengthens and builds the trapezius muscles, improving posture and neck stability.</p>
+                                <ol>
+                                    <li>Stand upright, holding a barbell with both hands in front of your thighs.</li>
+                                    <li>Shrug your shoulders as high as you can.</li>
+                                    <li>Hold briefly, then slowly lower.</li>
+                                    <li>Repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Forearms -->
+                            <div class="exercises_forearms workout_weightlift bgcolor_white">
+                                <h3>Wrist Curls</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src = "images/Wrist_Curl.gif" alt="Wrist Curl exercise" class = "flex_grow_1 flex_shrink_1">
+                                    <img src = "images/Wrist_Curl1.gif" alt="Wrist Curl Exercise" class = "flex_grow_1 flex_shrink_1">
+                                </div>
+                                <p>Targets the forearm muscles for better grip and wrist strength.</p>
+                                <ol>
+                                    <li>Sit on a bench with your forearms resting on your thighs.</li>
+                                    <li>Hold a dumbbell with your palm up, and curl your wrist upward.</li>
+                                    <li>Slowly lower the weight and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Biceps -->
+                            <div class="exercises_biceps workout_weightlift bgcolor_white">
+                                <h3>Dumbbell Curls</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src = "images/Dumbell_Curl.webp" alt="Dumbbell Curl Exercise" class = "flex_grow_1 flex_shrink_1">
+                                    <img src = "images/Dumbell_Curl1.gif" alt="Dumbbell Curl Exercise" class = "flex_grow_1 flex_shrink_1">
+                                </div>
+                                <p>Isolates the biceps to increase arm strength and definition.</p>
+                                <ol>
+                                    <li>Stand with a dumbbell in each hand.</li>
+                                    <li>Keep elbows close to your torso and curl the weights upward.</li>
+                                    <li>Lower slowly and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Biceps - Calisthenics -->
+                            <div class="exercises_biceps workout_calisthenics bgcolor_white">
+                                <h3>Chin-Ups</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Chin_Ups.gif" alt="Chin-Up Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Bodyweight bicep and back builder using a pull-up bar.</p>
+                                <ol>
+                                    <li>Grab the bar with palms facing you, shoulder-width apart.</li>
+                                    <li>Pull your chin over the bar.</li>
+                                    <li>Lower down in a controlled motion.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Delts -->
+                            <div class="exercises_delts workout_weightlift bgcolor_white">
+                                <h3>Lateral Raises</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Lat_Raises.gif" alt="Lateral Raise Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Develops the shoulder's lateral deltoid for broader shoulders.</p>
+                                <ol>
+                                    <li>Hold dumbbells by your sides.</li>
+                                    <li>Raise arms sideways until shoulder height.</li>
+                                    <li>Lower with control and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Chest + Triceps + Delts -->
+                            <div class="exercises_pecs exercises_triceps exercises_delts workout_weightlift bgcolor_white">
+                                <h3>Bench Press</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Bench_Press.gif" alt="Bench Press Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Builds chest, shoulder, and triceps strength using a barbell or dumbbells.</p>
+                                <ol>
+                                    <li>Lie flat on a bench, grip the bar slightly wider than shoulder-width.</li>
+                                    <li>Lower the bar to your chest.</li>
+                                    <li>Press back up to the starting position.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Obliques -->
+                            <div class="exercises_obliques workout_weightlift bgcolor_white">
+                                <h3>Russian Twists</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Russian_Twist.webp" alt="Russian Twist Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Targets the oblique muscles for improved rotational core strength.</p>
+                                <ol>
+                                    <li>Sit on the ground with knees bent, feet lifted.</li>
+                                    <li>Twist your torso side to side while holding a weight.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Abdominals - Calisthenics -->
+                            <div class="exercises_abdominals workout_calisthenics bgcolor_white">
+                                <h3>Crunches</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Crunches.gif" alt="Crunch Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Strengthens the rectus abdominis for visible core definition.</p>
+                                <ol>
+                                    <li>Lie on your back with knees bent and hands behind your head.</li>
+                                    <li>Lift your shoulders off the ground using your abs.</li>
+                                    <li>Lower slowly and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Quads -->
+                            <div class="exercises_quads workout_weightlift bgcolor_white">
+                                <h3>Barbell Back Squats</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Barbell_Squats.webp" alt="Barbell Back Squat Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Engages the quads, glutes, and hamstrings with heavy compound movement.</p>
+                                <ol>
+                                    <li>Stand with a barbell on your upper back.</li>
+                                    <li>Squat down by bending hips and knees.</li>
+                                    <li>Push through heels to return.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Calves -->
+                            <div class="exercises_calfs workout_weightlift bgcolor_white">
+                                <h3>Standing Calf Raises</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Calf_Raises.gif" alt="Standing Calf Raise Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Strengthens calf muscles, improving balance and ankle stability.</p>
+                                <ol>
+                                    <li>Stand on the edge of a step with heels hanging off.</li>
+                                    <li>Raise your heels as high as possible.</li>
+                                    <li>Lower slowly below step level and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Triceps - Calisthenics -->
+                            <div class="exercises_triceps workout_calisthenics bgcolor_white">
+                                <h3>Tricep Dips</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                   <img src="images/Triceps_Dip.gif" alt="Triceps Dip Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Targets the triceps for stronger, toned upper arms.</p>
+                                <ol>
+                                    <li>Place hands behind you on a dip bar or bench, legs extended.</li>
+                                    <li>Lower your body by bending the elbows.</li>
+                                    <li>Push back up and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Rear Delts -->
+                            <div class="exercises_back_delts workout_weightlift bgcolor_white">
+                                <h3>Reverse Flyes</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Reverse_Flyes.gif" alt="Reverse Fly Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Strengthens the rear deltoids to improve shoulder posture.</p>
+                                <ol>
+                                    <li>Bend over with dumbbells in hand.</li>
+                                    <li>Raise arms out to sides, squeezing shoulder blades.</li>
+                                    <li>Lower with control and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Lower Back -->
+                            <div class="exercises_lowerback workout_calisthenics bgcolor_white">
+                                <h3>Superman</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Superman.gif" alt="Superman Lower Back Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Builds endurance in the lower back and helps posture.</p>
+                                <ol>
+                                    <li>Lie face down on the floor.</li>
+                                    <li>Lift arms and legs off the ground simultaneously.</li>
+                                    <li>Hold briefly, then lower.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Upper Back -->
+                            <div class="exercises_upperback exercises_back_delts workout_weightlift bgcolor_white">
+                                <h3>Face Pulls</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Face_Pulls.gif" alt="Face Pull Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Improves upper back strength and shoulder health.</p>
+                                <ol>
+                                    <li>Attach a rope to a high pulley.</li>
+                                    <li>Pull the rope towards your face, keeping elbows high.</li>
+                                    <li>Squeeze shoulder blades, then return.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Lats -->
+                            <div class="exercises_lats workout_weightlift bgcolor_white">
+                                <h3>Lat Pulldowns</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Lat_Pulldowns.gif" alt="Lat Pulldown Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Targets the latissimus dorsi for a wider back.</p>
+                                <ol>
+                                    <li>Sit at the pulldown machine, grip the bar wide.</li>
+                                    <li>Pull the bar down to your chest.</li>
+                                    <li>Slowly return and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Lats - Calisthenics -->
+                            <div class="exercises_lats workout_calisthenics bgcolor_white">
+                                <h3>Pull-Ups</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Chin_Ups.gif" alt="Lats Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Bodyweight compound movement to develop lats, biceps, and back strength.</p>
+                                <ol>
+                                    <li>Grab pull-up bar with palms facing away, wider than shoulders.</li>
+                                    <li>Pull yourself up until chin clears bar.</li>
+                                    <li>Lower with control and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Glutes -->
+                            <div class="exercises_glutes workout_weightlift bgcolor_white">
+                                <h3>Hip Thrusts</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Hip_Thrust.gif" alt="Hip Thrust Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Activates the glutes, improving hip power and posture.</p>
+                                <ol>
+                                    <li>Sit with your upper back on a bench and a barbell over your hips.</li>
+                                    <li>Thrust hips upward by squeezing glutes.</li>
+                                    <li>Lower back down and repeat.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Hamstrings -->
+                            <div class="exercises_hamstring workout_weightlift bgcolor_white">
+                                <h3>Romanian Deadlifts</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/RDL.gif" alt="Romanian Deadlift Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Strengthens hamstrings and glutes while improving flexibility.</p>
+                                <ol>
+                                    <li>Hold a barbell, stand upright.</li>
+                                    <li>Hinge at the hips, lowering the bar while keeping legs slightly bent.</li>
+                                    <li>Return to standing by pushing through your hips.</li>
+                                </ol>
+                            </div>
+
+                            <!-- NEW: Abdominals - Calisthenics -->
+                            <div class="exercises_abdominals workout_calisthenics bgcolor_white">
+                                <h3>Hanging Leg Raises</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Hanging_Leg_Raises.gif" alt="Hanging Leg Raise Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Targets the lower abdominals using a pull-up bar.</p>
+                                <ol>
+                                    <li>Hang from a pull-up bar with arms extended.</li>
+                                    <li>Lift legs straight up toward your chest.</li>
+                                    <li>Lower with control.</li>
+                                </ol>
+                            </div>
+
+                            <!-- NEW: Shoulders + Arms - Calisthenics -->
+                            <div class="exercises_delts exercises_triceps workout_calisthenics bgcolor_white">
+                                <h3>Pike Push-Ups</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Pike_Push_Ups.gif" alt="Pike Push-Up Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Bodyweight alternative to overhead press, hitting delts and triceps.</p>
+                                <ol>
+                                    <li>Start in a pike position, hips high.</li>
+                                    <li>Bend elbows to lower head toward the ground.</li>
+                                    <li>Push back up.</li>
+                                </ol>
+                            </div>
+
+                            <!-- NEW: Glutes + Hamstrings -->
+                            <div class="exercises_glutes exercises_hamstring workout_weightlift bgcolor_white">
+                                <h3>Kettlebell Swings</h3>
+                                <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                    <img src="images/Kettlebell_Swings.gif" alt="Kettlebell Swing Exercise" class="flex_grow_1 flex_shrink_1">
+
+                                </div>
+                                <p>Powerful hip-hinge exercise for glutes, hamstrings, and conditioning.</p>
+                                <ol>
+                                    <li>Hold a kettlebell with both hands in front of you.</li>
+                                    <li>Hinge hips and swing it forward to shoulder height.</li>
+                                    <li>Let it fall back and repeat with rhythm.</li>
+                                </ol>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <footer id="exercise_references" class="w_100[%]">
+                    <div class="relative grid_row_2/3 padding_right_24[px] bgcolor_gray
+                        border_color_darkblue border_bottom_4[px] border_style_solid border_0">
+                        <ul class="reference-list display_flex flex_direction_row reset_list">
+                            <li class="flex_scalable padding_12[px] margin_bottom_20[px] padding_left_auto padding_right_auto">
+                                <div class="text_color_gray font_size_14[px]">Burnfit</div>
+                                <div class="font_display_bold font_size_18[px]">Exercise Library</div>
+                                <a href="https://burnfit.io/en/exercise_library/" target="_blank" class="reset_link text_color_darkblue font_display font_size_16[px]">More Info &gt;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+            <div id = "quiz" class = "bgcolor_gradient_down_lightblue-lightsky padding_top_16[px] display_none play_intro_appear_anim hide_scroll">
+                <button id = "quiz_fullscreen_btn" class = "font_display font_size_15[px] 
+                        text_color_lightcyan bgcolor_black border_radius_4[px] border_color_lightblue padding_left_right_24[px] padding_top_bottom_16[px]
+                        margin_15[px]">
+                                   Fullscreen
+                </button>
+                <div class = "border_radius_70[px] padding_top_bottom_32[px] bgcolor_black text_center font_display font_bold
+                font_size_40[px] text_shadow_dark_strong text_color_lightblue">
+                    Quiz
+                </div>
+                <div id = "quiz_menu">
+                    <div id = "quiz_start_menu">
+                        <div>
+                            <h2 class = "text_center font_display w_fit_content
+                                padding_left_right_24[px] padding_top_bottom_16[px] text_color_black 
+                                margin_left_auto margin_right_auto  ">
+                                To get the answer correct, you will have to select the muscles groups that the exercise focuses on.
+                                <br> For Example, Dumbell Curls focuses on biceps.
+                            </h2>
+                        </div>
+                        <div>
+                            <div id = "quiz_start_btn" class="margin_left_auto margin_right_auto w_fit_content">
+                                <button class = "relative reset_button border_radius_70[px] bgcolor_lightsky border_style_solid ">
+                                    <span class = "text_center font_display w_fit_content text_color_black
+                                    padding_left_right_24[px] padding_top_bottom_16[px] font_bold font_size_30[px] display_block">Start Quiz</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div id = "quiz_process" class = "display_flex flex_wrap w_fit_content
+                            margin_left_auto margin_right_auto w_fit_content
+                            ">
+                                <div class="w_fit_content">
+                                    <button id = "quiz_stop_btn"  class = "relative reset_button border_radius_70[px] bgcolor_lightredsky border_style_solid ">
+                                        <span class = "text_center font_display font_bold w_fit_content text_color_black
+                                        padding_left_right_24[px] padding_top_bottom_16[px] font_size_30[px] display_block">Stop Quiz</span>
+                                    </button>
+                                </div>
+                                <div class="w_fit_content bgcolor_black border_radius_70[px]">
+                                    <p  id = "quiz_score"  class = "text_center font_bold font_display w_fit_content text_color_lightblue
+                                    padding_left_right_24[px] padding_top_bottom_16[px]  font_size_30[px]">Score: </p>
+                                </div>
+                            </div>
+                            <div id = "quiz_conclusion" class ="w_100[%] h_100[%] z_layer_6">
+                                <div class = "w_fit_content h_fit_content margin_left_auto margin_right_auto">
+                                    <div>
+                                        <h2 class = "text_center font_display text_color_black
+                                        padding_left_right_24[px] padding_top_bottom_16[px] font_size_40[px] ">Correct</h2>
+                                    </div>
+                                    <div class="w_fit_content bgcolor_black
+                                        margin_left_auto margin_right_auto border_radius_70[px]">
+                                        <h2 class = "text_center font_display w_fit_content text_color_lightblue
+                                        padding_left_right_24[px] padding_top_bottom_16[px]">Correct Answer:</h2>
+                                        <ol class = "font_display text_center reset_list text_center padding_bottom_16[px]">
+                                            <li>
+                                                Gay 
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class = "margin_left_auto margin_right_auto w_fit_content">
+                                    <button id="quiz_continue" class = "
+                                    bgcolor_lightsky border_radius_70[px] font_display padding_12[px]
+                                    font_size_18[px]">
+                                        Continue
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                       
+                </div>
+                <div id = "answer_quiz_section" class = "display_flex flex_direction_row flex_wrap">
+                    <div id = "quiz_content" class = "bgcolor_gray- h_auto flex_shrink_1 flex_grow_1">
+                        <!-- Trapezius -->
+                        <div class="exercises_traps workout_weightlift bgcolor_white">
+                            <h3>Barbell Shrugs</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src = "images/Barbell-Shrug.gif" alt="Barbell Shrug exercise" class = "flex_grow_1 flex_shrink_1">
+                            </div>
+                            <ol>
+                                <li>Stand upright, holding a barbell with both hands in front of your thighs.</li>
+                                <li>Shrug your shoulders as high as you can.</li>
+                                <li>Hold briefly, then slowly lower.</li>
+                                <li>Repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Forearms -->
+                        <div class="exercises_forearms workout_weightlift bgcolor_white">
+                            <h3>Wrist Curls</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src = "images/Wrist_Curl.gif" alt="Wrist Curl exercise" class = "flex_grow_1 flex_shrink_1">
+                            </div>
+                            <ol>
+                                <li>Sit on a bench with your forearms resting on your thighs.</li>
+                                <li>Hold a dumbbell with your palm up, and curl your wrist upward.</li>
+                                <li>Slowly lower the weight and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Biceps -->
+                        <div class="exercises_biceps workout_weightlift bgcolor_white">
+                            <h3>Dumbbell Curls</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src = "images/Dumbell_Curl.webp" alt="Dumbbell Curl Exercise" class = "flex_grow_1 flex_shrink_1">
+                            </div>
+                            <ol>
+                                <li>Stand with a dumbbell in each hand.</li>
+                                <li>Keep elbows close to your torso and curl the weights upward.</li>
+                                <li>Lower slowly and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Biceps - Calisthenics -->
+                        <div class="exercises_biceps workout_calisthenics bgcolor_white">
+                            <h3>Chin-Ups</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Chin_Ups.gif" alt="Chin-Up Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Grab the bar with palms facing you, shoulder-width apart.</li>
+                                <li>Pull your chin over the bar.</li>
+                                <li>Lower down in a controlled motion.</li>
+                            </ol>
+                        </div>
+                        <!-- Delts -->
+                        <div class="exercises_delts workout_weightlift bgcolor_white">
+                            <h3>Lateral Raises</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Lat_Raises.gif" alt="Lateral Raise Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Hold dumbbells by your sides.</li>
+                                <li>Raise arms sideways until shoulder height.</li>
+                                <li>Lower with control and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Chest + Triceps + Delts -->
+                        <div class="exercises_pecs exercises_triceps exercises_delts workout_weightlift bgcolor_white">
+                            <h3>Bench Press</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Bench_Press.gif" alt="Bench Press Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Lie flat on a bench, grip the bar slightly wider than shoulder-width.</li>
+                                <li>Lower the bar to your chest.</li>
+                                <li>Press back up to the starting position.</li>
+                            </ol>
+                        </div>
+                        <!-- Obliques -->
+                        <div class="exercises_obliques workout_weightlift bgcolor_white">
+                            <h3>Russian Twists</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Russian_Twist.webp" alt="Russian Twist Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Sit on the ground with knees bent, feet lifted.</li>
+                                <li>Twist your torso side to side while holding a weight.</li>
+                            </ol>
+                        </div>
+                        <!-- Abdominals - Calisthenics -->
+                        <div class="exercises_abdominals workout_calisthenics bgcolor_white">
+                            <h3>Crunches</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Crunches.gif" alt="Crunch Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Lie on your back with knees bent and hands behind your head.</li>
+                                <li>Lift your shoulders off the ground using your abs.</li>
+                                <li>Lower slowly and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Quads -->
+                        <div class="exercises_quads workout_weightlift bgcolor_white">
+                            <h3>Barbell Back Squats</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Barbell_Squats.webp" alt="Barbell Back Squat Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Stand with a barbell on your upper back.</li>
+                                <li>Squat down by bending hips and knees.</li>
+                                <li>Push through heels to return.</li>
+                            </ol>
+                        </div>
+                        <!-- Calves -->
+                        <div class="exercises_calfs workout_weightlift bgcolor_white">
+                            <h3>Standing Calf Raises</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Calf_Raises.gif" alt="Standing Calf Raise Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Stand on the edge of a step with heels hanging off.</li>
+                                <li>Raise your heels as high as possible.</li>
+                                <li>Lower slowly below step level and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Triceps - Calisthenics -->
+                        <div class="exercises_triceps workout_calisthenics bgcolor_white">
+                            <h3>Tricep Dips</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                               <img src="images/Triceps_Dip.gif" alt="Triceps Dip Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Place hands behind you on a dip bar or bench, legs extended.</li>
+                                <li>Lower your body by bending the elbows.</li>
+                                <li>Push back up and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Rear Delts -->
+                        <div class="exercises_back_delts workout_weightlift bgcolor_white">
+                            <h3>Reverse Flyes</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Reverse_Flyes.gif" alt="Reverse Fly Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Bend over with dumbbells in hand.</li>
+                                <li>Raise arms out to sides, squeezing shoulder blades.</li>
+                                <li>Lower with control and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Lower Back -->
+                        <div class="exercises_lowerback workout_calisthenics bgcolor_white">
+                            <h3>Superman</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Superman.gif" alt="Superman Lower Back Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Lie face down on the floor.</li>
+                                <li>Lift arms and legs off the ground simultaneously.</li>
+                                <li>Hold briefly, then lower.</li>
+                            </ol>
+                        </div>
+                        <!-- Upper Back -->
+                        <div class="exercises_upperback workout_weightlift bgcolor_white">
+                            <h3>Face Pulls</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Face_Pulls.gif" alt="Face Pull Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Attach a rope to a high pulley.</li>
+                                <li>Pull the rope towards your face, keeping elbows high.</li>
+                                <li>Squeeze shoulder blades, then return.</li>
+                            </ol>
+                        </div>
+                        <!-- Lats -->
+                        <div class="exercises_lats workout_weightlift bgcolor_white">
+                            <h3>Lat Pulldowns</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Lat_Pulldowns.gif" alt="Lat Pulldown Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Sit at the pulldown machine, grip the bar wide.</li>
+                                <li>Pull the bar down to your chest.</li>
+                                <li>Slowly return and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Lats - Calisthenics -->
+                        <div class="exercises_lats workout_calisthenics bgcolor_white">
+                            <h3>Pull-Ups</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Chin_Ups.gif" alt="Lats Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Grab pull-up bar with palms facing away, wider than shoulders.</li>
+                                <li>Pull yourself up until chin clears bar.</li>
+                                <li>Lower with control and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Glutes -->
+                        <div class="exercises_glutes workout_weightlift bgcolor_white">
+                            <h3>Hip Thrusts</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Hip_Thrust.gif" alt="Hip Thrust Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Sit with your upper back on a bench and a barbell over your hips.</li>
+                                <li>Thrust hips upward by squeezing glutes.</li>
+                                <li>Lower back down and repeat.</li>
+                            </ol>
+                        </div>
+                        <!-- Hamstrings -->
+                        <div class="exercises_hamstring workout_weightlift bgcolor_white">
+                            <h3>Romanian Deadlifts</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/RDL.gif" alt="Romanian Deadlift Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Hold a barbell, stand upright.</li>
+                                <li>Hinge at the hips, lowering the bar while keeping legs slightly bent.</li>
+                                <li>Return to standing by pushing through your hips.</li>
+                            </ol>
+                        </div>
+                        <!-- NEW: Abdominals - Calisthenics -->
+                        <div class="exercises_abdominals workout_calisthenics bgcolor_white">
+                            <h3>Hanging Leg Raises</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Hanging_Leg_Raises.gif" alt="Hanging Leg Raise Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Hang from a pull-up bar with arms extended.</li>
+                                <li>Lift legs straight up toward your chest.</li>
+                                <li>Lower with control.</li>
+                            </ol>
+                        </div>
+                        <!-- NEW: Shoulders + Arms - Calisthenics -->
+                        <div class="exercises_delts exercises_triceps workout_calisthenics bgcolor_white">
+                            <h3>Pike Push-Ups</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Pike_Push_Ups.gif" alt="Pike Push-Up Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Start in a pike position, hips high.</li>
+                                <li>Bend elbows to lower head toward the ground.</li>
+                                <li>Push back up.</li>
+                            </ol>
+                        </div>
+                        <!-- NEW: Glutes + Hamstrings -->
+                        <div class="exercises_glutes exercises_hamstring workout_weightlift bgcolor_white">
+                            <h3>Kettlebell Swings</h3>
+                            <div class = "display_flex flex_wrap flex_grow_1 flex_shrink_1 justify_content_space_around bgcolor_white">
+                                <img src="images/Kettlebell_Swings.gif" alt="Kettlebell Swing Exercise" class="flex_grow_1 flex_shrink_1">
+
+                            </div>
+                            <ol>
+                                <li>Hold a kettlebell with both hands in front of you.</li>
+                                <li>Hinge hips and swing it forward to shoulder height.</li>
+                                <li>Let it fall back and repeat with rhythm.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class = "bgcolor_black border_radius_70[px] flex_grow_1">
+                        <h2 class = "padding_top_20[px] text_center text_color_lightblue font_display ">Answer</h2>
+                        <p class = "padding_bottom_20[px] text_center text_color_lightblue">Choose a muscle group where the exercise works on</p>
+                    <div class = "display_flex flex_wrap flex_grow_1">
+                    <div id = "quiz_full_body_section" class = "full_body relative bgcolor_white w_fit_content h_fit_content
+                    border_radius_70[px] border_thickness_5[px] border_style_solid overflow_hidden flex_grow_1 ">
+                        <div class = "front_body relative w_fit_content h_fit_content display_none margin_left_auto margin_right_auto">
+                            <div class = "front_fullbody w_fit_content h_fit_content">
+                                <div class = "overflow_hidden relative full_body_art_frame">
+                                    <img src="images/ArtBody-Sheet.png" alt="" class="front_full">
+                                </div>
+                                <div  class = " front_traps_btn w_0 h_0">
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                </div>
+                                <div class = " front_delts_btn w_0 h_0">
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                </div>
+                                <div  class = " front_biceps_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div class = " front_forearms_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_pecs_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_abdominals_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_obliques_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_quads_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " front_calfs_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class = " front_traps_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_traps">
+                                </div>
+                            </div>
+                            <div  class = " front_forearms_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_forearms">
+                                </div>
+                            </div>
+                            <div  class = " front_biceps_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_biceps">
+                                </div>
+                            </div>
+                            <div  class = " front_delts_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_delts">
+                                </div>
+                            </div>
+                            <div  class = " front_pecs_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_pecs">
+                                </div>
+                            </div>
+                            <div  class = " front_obliques_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_obliques">
+                                </div>
+                            </div>
+                            <div  class = " front_abdominals_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_abdominals">
+                                </div>
+                            </div>
+                            <div  class = " front_quads_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_quads">
+                                </div>
+                            </div>
+                            <div  class = " front_calfs_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="front_calfs">
+                                </div>
+                            </div>
+                                        
+                        </div>
+                        <div class = "back_body relative w_fit_content h_fit_content margin_left_auto margin_right_auto">
+                            <div class = "back_fullbody w_fit_content h_fit_content">
+                                <div class = "overflow_hidden relative full_body_art_frame">
+                                    <img src="images/ArtBody-Sheet.png" alt="" class="back_full">
+                                </div>
+                                <div  class = " back_traps_btn w_0 h_0">
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                </div>
+                                <div  class = " back_delts_btn w_0 h_0">
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                    <button class = "absolute reset_button">
+                                    </button>
+                                </div>
+                                <div  class = " back_triceps_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_forearms_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_lats_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_upperback_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_lowerback_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_glutes_btn  w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_hamstring_btn w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                                <div  class = " back_calfs_btn  w_0 h_0">
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                    <button class = "absolute reset_button ">
+                                    </button>
+                                </div>
+                            </div>
+                            <div  class = " back_traps_red   w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_traps">
+                                </div>
+                            </div>
+                            <div  class = " back_forearms_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_forearms">
+                                </div>
+                            </div>
+                            <div  class = " back_triceps_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_triceps">
+                                </div>
+                            </div>
+                            <div  class = " back_delts_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_rear_delts">
+                                </div>
+                            </div>
+                            <div  class = " back_lowerback_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_lower_back">
+                                </div>
+                            </div>
+                            <div  class = " back_upperback_red w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_upper_back">
+                                </div>
+                            </div>
+                            <div  class = " back_lats_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_lats">
+                                </div>
+                            </div>
+                            <div  class = " back_glutes_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_glutes">
+                                </div>
+                            </div>
+                            <div  class = " back_hamstring_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_hamstring">
+                                </div>
+                            </div>
+                            <div  class = " back_calfs_red  w_fit_content h_fit_content absolute top_0">
+                                <div class = "overflow_hidden full_body_art_frame z_layer_1">
+                                    <img src="images/ArtBody-Sheet(red).png" alt="" class="back_calfs">
+                                </div>
+                            </div>
+                        </div>
+                        <button class = "toggle_body absolute bgcolor_black font_display font_bold text_color_white font_size_30[px]">
+                            Flip
+                        </button>
+                    </div>
+                    <div class = "border_radius_70[px] bgcolor_black- w_120[px] h_500[px] flex_grow_1 flex_wrap">
+                            <div>
+                                <div class = "relative border_radius_70[px] h_200[px]
+                                    ">
+                                    <div id = "chosen_options_container" class = " bgcolor_white relative overflow_scroll hide_scroll w_100[%] h_100[%]
+                                    display_flex flex_wrap border_radius_70[px] border_style_solid align_content_flex_start">
+                                        
+                                    </div>
+                                    <button id = "quiz_answer" class = "border_radius_70[px] bgcolor_lightblue 
+                                    absolute left_50[%] translate_x-50[%]">
+                                    <span class = "text_center text_color_black font_bold font_display font_size_30[px] padding_10[px] display_block">
+                                        Answer
+                                    </span>
+                                    </button>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                    </div>
+            
+                </div>
+                <footer class = "padding_top_bottom_100[px]">
+
+                </footer>
+            </div>
+        </section>
+    </body>
+    
 </html>
