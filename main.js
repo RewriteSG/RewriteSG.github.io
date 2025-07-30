@@ -1028,5 +1028,5 @@ document.getElementById("qr_code").addEventListener("click",
     function()
     {
         document.getElementById("qr_code").classList.toggle("display_none");
-    }
+    } 
 )
