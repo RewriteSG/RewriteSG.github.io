@@ -1017,3 +1017,16 @@ document.getElementById("index_page_jotaro_btn").addEventListener("click",
 {
     sound.play();
 })
+document.getElementById("index_page_qr_btn").addEventListener("click",
+    function()
+    {
+        document.getElementById("qr_code").classList.toggle("display_none");
+    }
+
+)
+document.getElementById("close_qr_btn").addEventListener("click",
+    function()
+    {
+        document.getElementById("qr_code").classList.toggle("display_none");
+    }
+)
