@@ -1,12 +1,20 @@
 const body = document.body;
 var content_grid_name = "";
+var notNavClick = true;
 function SelectWeightlift()
 {
     
     Card_Reset();
     let TopicGrid = document.getElementById("weightlift_content_grid");
     if(TopicGrid.classList.contains("display_none"))
+    {
         TopicGrid.classList.remove("display_none");
+    }
+    if(notNavClick)
+        TopicGrid.scrollIntoView({
+            behavior: "smooth"
+        });
+    notNavClick = true;
     TopicGrid = document.getElementById("calisthenics_content_grid");
     if(!TopicGrid.classList.contains("display_none"))
         TopicGrid.classList.add("display_none");
@@ -42,7 +50,14 @@ function SelectCalisthenics()
         TopicGrid.classList.add("display_none");
     TopicGrid = document.getElementById("calisthenics_content_grid");
     if(TopicGrid.classList.contains("display_none"))
+    {
         TopicGrid.classList.remove("display_none");
+    }
+    if(notNavClick)
+    TopicGrid.scrollIntoView({
+        behavior: "smooth"
+    });
+    notNavClick = true;
     TopicGrid = document.getElementById("bulkcut_content_grid");
     if(!TopicGrid.classList.contains("display_none"))
         TopicGrid.classList.add("display_none");
@@ -78,7 +93,14 @@ function Selectbulkcut()
         TopicGrid.classList.add("display_none");
     TopicGrid = document.getElementById("bulkcut_content_grid");
     if(TopicGrid.classList.contains("display_none"))
+    {
         TopicGrid.classList.remove("display_none");
+    }
+    if(notNavClick)
+    TopicGrid.scrollIntoView({
+                behavior: "smooth"
+            });
+    notNavClick = true;
     content_grid_name = "bulkcut";
     card_selected = 1;
     SetContentGridElement();
@@ -176,6 +198,7 @@ function Load_Subtopic_page()
     function Card_ShowSelected(index)
     {
         let selected_content_card = document.getElementById(content_grid_name+"_content_card_" + index);
+
         if(selected_content_card)
         {
             selected_content_card.classList.remove("content_preview_left", "content_preview_right", "content_card_preview_none");
@@ -247,6 +270,17 @@ function Load_Subtopic_page()
 {   // Extra Init
     const dMuscleGroup = document.getElementById("muscle_group");
     const dQuiz = document.getElementById("quiz");
+    
+    document.getElementById("quiz_fullscreen_btn").addEventListener("click",function()
+    {
+        dQuiz.classList.toggle("quiz_fullscreen");
+        dQuiz.scrollIntoView({
+            behavior: "smooth"
+        })
+        document.getElementById("index_page_1").classList.toggle("display_none");
+        document.getElementById("sticky_navigation").classList.toggle("display_none");
+        
+    });
     function HideAllExtras()
     {
         if(!dMuscleGroup.classList.contains("display_none"))
@@ -266,6 +300,9 @@ function Load_Subtopic_page()
         HideAllExtras();
         RemoveAllMuscleSelection();
         dQuiz.classList.remove("display_none");
+        dQuiz.scrollIntoView({
+            behavior: "smooth"
+        });
     });
     musclegroup_selection_btn.addEventListener("click", function()
     {
@@ -276,6 +313,9 @@ function Load_Subtopic_page()
         HideAllExtras();
         RemoveAllMuscleSelection();
         dMuscleGroup.classList.remove("display_none");
+        dMuscleGroup.scrollIntoView({
+            behavior: "smooth"
+        });
     });
     const sideFront = "front";
     const sideBack = "back";
@@ -584,11 +624,18 @@ function InitaliseMuscleGroupBtn(getMuscleFunction)
 
 var eQuizChosenOptions = document.querySelectorAll(".chosen_option");
 const eQuizChosenOptionContainer = document.getElementById("chosen_options_container");
-function RemoveAllChosenOptions()
+function QuizRemoveAllChosenOptions()
 {
     eQuizChosenOptions = document.querySelectorAll(".chosen_option");
     eQuizChosenOptions.forEach(element => {
         element.remove();
+    });
+}
+function QuizUnselectAllMuscle()
+{
+    const musclesSelected = document.querySelectorAll("#quiz_full_body_section .muscle_selected");
+    musclesSelected.forEach(muscle => {
+        muscle.classList.remove("muscle_selected");
     });
 }
 function QuizSelectMuscleToOption(muscle)
@@ -618,7 +665,8 @@ function QuizMuscleSelectBtn_Event(getMuscleFunction)
 
     if(muscle_red.classList.contains("muscle_selected"))
     {
-        let exerciseName = "exercises_"+muscleName.replace(currentSide+"_", "");
+        console.log("remoiving");
+        let exerciseName = "exercises_"+muscle.replace(currentSide+"_", "");
         if(muscle == "back_delts")
             exerciseName = "exercises_back_delts";
         document.querySelector(".option_"+exerciseName).remove();
@@ -669,56 +717,156 @@ function InitaliseQuizMuscleBtn(getMuscleFunction)
     });
 }  
 
-var CorrentAnswers = [];
+    InitaliseQuizMuscleBtn(GetFrontTraps);
+    InitaliseQuizMuscleBtn(GetFrontPecs);
+    InitaliseQuizMuscleBtn(GetFrontDelts);
+    InitaliseQuizMuscleBtn(GetFrontAbdominals);
+    InitaliseQuizMuscleBtn(GetFrontObliques);
+    InitaliseQuizMuscleBtn(GetFrontBiceps);
+    InitaliseQuizMuscleBtn(GetFrontForearms);
+    InitaliseQuizMuscleBtn(GetFrontQuads);
+    InitaliseQuizMuscleBtn(GetFrontCalfs);
+    
+    InitaliseQuizMuscleBtn(GetBackTraps);
+    InitaliseQuizMuscleBtn(GetBackReardelts);
+    InitaliseQuizMuscleBtn(GetBackUpperback);
+    InitaliseQuizMuscleBtn(GetBackLats);
+    InitaliseQuizMuscleBtn(GetBackTriceps);
+    InitaliseQuizMuscleBtn(GetBackForearms);
+    InitaliseQuizMuscleBtn(GetBackLowerback);
+    InitaliseQuizMuscleBtn(GetBackGlutes);
+    InitaliseQuizMuscleBtn(GetBackHamstring);
+    InitaliseQuizMuscleBtn(GetBackCalfs);
+
+var CorrectAnswers = [];
+var Score = 0;
 
 function CheckAnswer()
 {
-    const eExercise = document.querySelector("#quiz_content > div :not(.display_none)");
+    const eExercise = document.querySelector("#quiz_content > div:not(.display_none)");
     const eOptions = document.querySelectorAll(".chosen_option");
+
     var iExerciseCount = 0;
     var iExerciseMatchCount = 0;
-    CorrentAnswers.length= 0;
+    CorrectAnswers.length= 0;
     eExercise.classList.forEach(className =>
     {
         if(className.includes("exercises_"))
         {
             iExerciseCount++;
-            CorrentAnswers.push(className.replace("exercises_",""));
-        }
-        eOptions.forEach(eOption =>
+            CorrectAnswers.push(className.replace("exercises_",""));
+            eOptions.forEach(eOption =>
             {
-                if(className.replace("exercises_","") == eOption.classList[1].replace("option_",""))
+                console.log("exercise ans" + className + " Option ans" + eOption.classList[1].replace("option_",""));
+
+                if(className == eOption.classList[1].replace("option_",""))
                     iExerciseMatchCount++;
             });
+        }
+        
     });
     if(iExerciseCount == 0 && iExerciseMatchCount == 0)
         return false;
     return iExerciseCount == iExerciseMatchCount;
 }
 
+const eQuizConclusion = document.getElementById("quiz_conclusion");
+const eQuizConclusionHeader = eQuizConclusion.querySelector("div:first-child h2");
+const eQuizConclusionList = eQuizConclusion.querySelector("div:first-child div:last-child ol");
+const QuizConclusionContinueBtn = eQuizConclusion.querySelector("div:last-child button");
+QuizConclusionContinueBtn.addEventListener("click",function(){
+    if(!eQuizConclusion.classList.contains("display_none"))
+        eQuizConclusion.classList.add("display_none");
+    eQuizSection.classList.remove("display_none");
+    eQuizSection.scrollIntoView({
+        behavior: "smooth"
+    })
+    QuizRandomizeExercise();
+    QuizUnselectAllMuscle();
+    QuizRemoveAllChosenOptions()
+    eQuizConclusion.classList.remove("bgcolor_lightgreen_opacity_0_75");
+    eQuizConclusion.classList.remove("bgcolor_lightredsky_opacity_0_75");
+});
+
+if(!eQuizConclusion.classList.contains("display_none"))
+    eQuizConclusion.classList.add("display_none");
+
 function CorrectAnswer()
 {
-    
+    eQuizConclusion.classList.add("bgcolor_lightgreen_opacity_0_75");
+    eQuizConclusionHeader.innerHTML = "Correct";
+    Score++;
 }
 function WrongAnswer()
 {
-
+    eQuizConclusion.classList.add("bgcolor_lightredsky_opacity_0_75");
+    eQuizConclusionHeader.innerHTML = "Wrong";
 }
 
-const bQuizAnswer = document.getElementById("quiz_answer");
-bQuizAnswer.addEventListener("click", function()
+const QuizAnswerBtn = document.getElementById("quiz_answer");
+QuizAnswerBtn.addEventListener("click", function()
 {
+    eQuizConclusion.classList.remove("display_none");
+    
+    if(!eQuizSection.classList.contains("display_none"))
+        eQuizSection.classList.add("display_none");
     if(CheckAnswer())
     {
-
+        CorrectAnswer();
     }
     else
     {
-
+        WrongAnswer();
     }
+    const items = eQuizConclusionList.querySelectorAll("li");
+    const ol = document.querySelector("#quiz_conclusion ol");
+    items.forEach(item => {
+        item.remove();
+    });
+    CorrectAnswers.forEach(answer => {
+        const newItem = document.createElement("li");
+        newItem.innerHTML = answer;
+        ol.appendChild(newItem);
+    });
+    eQuizScore.innerHTML = "Score: " + Score; 
+
+})
+QuizRandomizeExercise();
+
+const eQuizStartMenu = document.getElementById("quiz_start_menu");
+const eQuizProcessMenu = document.getElementById("quiz_process");
+const eQuizScore = document.getElementById("quiz_score");
+const eQuizSection = document.getElementById("answer_quiz_section");
+function StartQuiz()
+{
+    eQuizProcessMenu.classList.remove("display_none");
+    eQuizSection.classList.remove("display_none");
+    if(!eQuizStartMenu.classList.contains("display_none"))
+        eQuizStartMenu.classList.add("display_none");
+    eQuizScore.innerHTML = "Score: " + Score; 
+} 
+function StopQuiz()
+{
+    eQuizStartMenu.classList.remove("display_none");
+    if(!eQuizProcessMenu.classList.contains("display_none"))
+        eQuizProcessMenu.classList.add("display_none");
+    if(!eQuizSection.classList.contains("display_none"))
+        eQuizSection.classList.add("display_none");
+}
+StopQuiz();
+const QuizStartBtn = document.getElementById("quiz_start_btn");
+const QuizStopBtn = document.getElementById("quiz_stop_btn");
+QuizStartBtn.addEventListener("click",function()
+{
+    Score = 0;
+    StartQuiz();
+    QuizRandomizeExercise();
+})
+QuizStopBtn.addEventListener("click",function()
+{
+    StopQuiz();
 })
 
-QuizRandomizeExercise();
 
 
 }
@@ -745,6 +893,8 @@ function ShowPage(page)
 {
     if(page.classList.contains("display_none"))
         page.classList.remove("display_none");
+
+    page.scrollIntoView({  behavior: "smooth"});
 }
 
 eNav_whystayfit.addEventListener("click", function()
@@ -765,15 +915,16 @@ eNav_whystayfit.addEventListener("click", function()
 eNav_weightlift.addEventListener("click", function()
 
 {
+    notNavClick = false;
     HideAllPages();
     ShowPage(sSubtopic);
-    
     SelectWeightlift();
 }
 )
 eNav_calisthenics.addEventListener("click", function()
 
 {
+    notNavClick = false;
     HideAllPages();
     ShowPage(sSubtopic);
     
@@ -783,6 +934,7 @@ eNav_calisthenics.addEventListener("click", function()
 eNav_bulkcut.addEventListener("click", function()
 
 {
+    notNavClick = false;
     HideAllPages();
     ShowPage(sSubtopic);
     Selectbulkcut();
@@ -794,3 +946,66 @@ eNav_extras.addEventListener("click",function()
     HideAllPages();
     ShowPage(sExtras);
 })
+function toggleMobileNav()
+{
+  const navLinks = document.getElementById("mobile_nav_links");
+  navLinks.classList.toggle("show");
+}
+document.getElementById("mobile_nav_toggle").addEventListener("click",toggleMobileNav);
+
+document.getElementById("mobile_nav_whystayfit").addEventListener("click", function()
+{
+    HideAllPages();
+    ShowPage(sWhystayfit);
+
+    content_grid_name = "whystayfit";
+    SetContentGridElement();
+    if(content_grid_element)
+    {
+        card_size = SetMaxCardsNumber();
+        SetButtons();
+        Card_ShowSelected(card_selected);
+    }
+    toggleMobileNav();
+}
+);
+document.getElementById("mobile_nav_weightlift").addEventListener("click", function()
+
+{
+    notNavClick = false;
+    HideAllPages();
+    ShowPage(sSubtopic);
+    
+    SelectWeightlift();
+    toggleMobileNav();
+}
+);
+document.getElementById("mobile_nav_calisthenics").addEventListener("click", function()
+
+{
+    notNavClick = false;
+    HideAllPages();
+    ShowPage(sSubtopic);
+    
+    SelectCalisthenics();
+    toggleMobileNav();
+}
+);
+document.getElementById("mobile_nav_bulkcut").addEventListener("click", function()
+
+{
+    notNavClick = false;
+    HideAllPages();
+    ShowPage(sSubtopic);
+    Selectbulkcut();
+    toggleMobileNav();
+}
+);
+document.getElementById("mobile_nav_extras").addEventListener("click",function()
+{
+    notNavClick = false;
+    HideAllPages();
+    ShowPage(sExtras);
+    toggleMobileNav();
+})
+;
