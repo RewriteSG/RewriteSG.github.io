@@ -2457,7 +2457,7 @@ div#quiz_conclusion
 .play_intro_h1_anim
 {
     transform: translateX(-100%);
-    animation: Intro_h1 1s ease-out  forwards;    
+    animation: Intro_h1 1s ease-out forwards;    
 }
 .play_intro_body_anim
 {
@@ -2465,7 +2465,7 @@ div#quiz_conclusion
 }
 .play_intro_img_anim
 {
-        transform: translate(100%, -100%);
+    transform: translate(100%, -100%);
     animation: Intro_img 1s ease-out 1s forwards;    
 }
 .play_intro_appear_anim

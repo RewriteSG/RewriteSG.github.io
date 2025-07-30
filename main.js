@@ -277,7 +277,6 @@ function Load_Subtopic_page()
         dQuiz.scrollIntoView({
             behavior: "smooth"
         })
-        document.getElementById("index_page_1").classList.toggle("display_none");
         document.getElementById("sticky_navigation").classList.toggle("display_none");
         
     });
@@ -748,6 +747,7 @@ function CheckAnswer()
 
     var iExerciseCount = 0;
     var iExerciseMatchCount = 0;
+    var iExerciseNotMatchCount = 0;
     CorrectAnswers.length= 0;
     eExercise.classList.forEach(className =>
     {
@@ -761,13 +761,15 @@ function CheckAnswer()
 
                 if(className == eOption.classList[1].replace("option_",""))
                     iExerciseMatchCount++;
+                else
+                    iExerciseNotMatchCount++;
             });
         }
         
     });
     if(iExerciseCount == 0 && iExerciseMatchCount == 0)
         return false;
-    return iExerciseCount == iExerciseMatchCount;
+    return iExerciseCount == iExerciseMatchCount && iExerciseNotMatchCount == 0;
 }
 
 const eQuizConclusion = document.getElementById("quiz_conclusion");
@@ -807,7 +809,7 @@ const QuizAnswerBtn = document.getElementById("quiz_answer");
 QuizAnswerBtn.addEventListener("click", function()
 {
     eQuizConclusion.classList.remove("display_none");
-    
+    eQuizConclusion.style.zIndex = 7;
     if(!eQuizSection.classList.contains("display_none"))
         eQuizSection.classList.add("display_none");
     if(CheckAnswer())
