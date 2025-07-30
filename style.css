@@ -1036,6 +1036,10 @@
 {
     transform: translateX(-50%);
 }
+.translate_x_10\[\%\] 
+{
+    transform: translateX(10%);
+}
 .translate_y-50\[\%\]
 {
     transform: translateY(-50%);
@@ -1348,6 +1352,10 @@
 .padding_20\[\%\] 
 {
     padding: 20%;
+}
+.padding_30\[\px\] 
+{
+    padding: 30px;
 }
 .padding_50\[\%\] 
 {

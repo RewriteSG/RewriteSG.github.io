@@ -1024,7 +1024,7 @@ document.getElementById("index_page_qr_btn").addEventListener("click",
     }
 
 )
-document.getElementById("close_qr_btn").addEventListener("click",
+document.getElementById("qr_code").addEventListener("click",
     function()
     {
         document.getElementById("qr_code").classList.toggle("display_none");
