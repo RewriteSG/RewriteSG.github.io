@@ -2356,8 +2356,28 @@ div#quiz_conclusion
     {
         top: 40px;
     }
-}
+    #index_page_content > p{
+    font-size: 20px;
+    }
+    #index_page_content > h2{
+    font-size: 80px;
+    }
+    span.absolute.font_display.font_size_30\[px\].text_color_white.text_shadow_dark_strong.text_center.translate_xy-50\[\%\].left_50\[\%\].top_50\[\%\].font_bold {
+    font-size: 20px;
+    }
 
+    .content_preview_left
+    {
+        transform: translate(-61%, 0%) scale(.3);
+    }
+    .content_preview_right
+    {
+        transform: translate(61%, 0%) scale(.3);
+    }   
+}
+@media screen and (max-width:400px) 
+{
+}
 #quiz_conclusion li {
     color: var(--light-blue);
     font-family: var(--font-display);
