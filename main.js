@@ -1009,3 +1009,9 @@ document.getElementById("mobile_nav_extras").addEventListener("click",function()
     toggleMobileNav();
 })
 ;
+const sound = new Audio("audio/star_finger.mp3");
+document.getElementById("index_page_jotaro_btn").addEventListener("click",
+    function()
+{
+    sound.play();
+})

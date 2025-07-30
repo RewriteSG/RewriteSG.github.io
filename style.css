@@ -1,17 +1,17 @@
 @font-face 
 {
     font-family: 'Aleo_Regular';
-    src: url('../fonts/Aleo-VariableFont_wght.ttf') format('truetype');
+    src: url('fonts/Aleo-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-@font-face
+/* @font-face
 {
     font-family: 'Aleo_Italic';
-    src : url('../fonts/Aleo-Italic-VariableFont_wght.ttf') format('truetype');
+    src : url('fonts/Aleo-Italic-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
-}
+} */
 
 :root 
 {
