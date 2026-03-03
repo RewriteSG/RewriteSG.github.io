@@ -1,2 +1,3 @@
 # RewriteSG.github.io
-You can [check the live demo here](https://rewritesg.github.io/The_Island_Pulse).
+[AR Webgl Test](https://rewritesg.github.io/AR_TestBuild).
+[MultiplayerLobby](https://rewritesg.github.io/Multiplayer).
