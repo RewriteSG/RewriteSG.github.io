@@ -1150,34 +1150,41 @@ void main()
           }
         }
         // ─── Image Tracking ───────────────────────────────────────────────────────
-        if (session.isAR && this.imagetrack && this.imagetrack.hasBitmap) {
-          var imageTrackingResults = frame.getImageTrackingResults();
-          var imageFound = false;
-          for (var it = 0; it < imageTrackingResults.length; it++) {
+if (session.isAR && this.imagetrack && this.imagetrack.hasBitmap) {
+    // Guard: only call if the session actually supports it
+    if (typeof frame.getImageTrackingResults === 'function') {
+        var imageTrackingResults = frame.getImageTrackingResults();
+        var imageFound = false;
+        for (var it = 0; it < imageTrackingResults.length; it++) {
             var itResult = imageTrackingResults[it];
             if (itResult.trackingState === "tracked") {
-              var itPose = frame.getPose(itResult.imageSpace, session.refSpace);
-              if (itPose) {
-                var itT = itPose.transform.position;
-                var itR = itPose.transform.orientation;
-                this.imagetrack.lastPose[0] =  itT.x;
-                this.imagetrack.lastPose[1] =  itT.y;
-                this.imagetrack.lastPose[2] = -itT.z;
-                this.imagetrack.lastPose[3] = -itR.x;
-                this.imagetrack.lastPose[4] = -itR.y;
-                this.imagetrack.lastPose[5] =  itR.z;
-                this.imagetrack.lastPose[6] =  itR.w;
-                this.imagetrack.isTracked = true;
-                imageFound = true;
-                break;
-              }
+                var itPose = frame.getPose(itResult.imageSpace, session.refSpace);
+                if (itPose) {
+                    var itT = itPose.transform.position;
+                    var itR = itPose.transform.orientation;
+                    this.imagetrack.lastPose[0] =  itT.x;
+                    this.imagetrack.lastPose[1] =  itT.y;
+                    this.imagetrack.lastPose[2] = -itT.z;
+                    this.imagetrack.lastPose[3] = -itR.x;
+                    this.imagetrack.lastPose[4] = -itR.y;
+                    this.imagetrack.lastPose[5] =  itR.z;
+                    this.imagetrack.lastPose[6] =  itR.w;
+                    this.imagetrack.isTracked = true;
+                    imageFound = true;
+                    break;
+                }
             }
-          }
-          if (!imageFound) {
-            this.imagetrack.isTracked = false;
-          }
         }
-        // ─── End Image Tracking ───────────────────────────────────────────────────
+        if (!imageFound) {
+            this.imagetrack.isTracked = false;
+        }
+    } else {
+        // Session doesn't have image-tracking — means it wasn't in requiredFeatures
+        console.warn("[ImageTracking] getImageTrackingResults not available on this frame. Was image-tracking requested in the session?");
+        this.imagetrack.isTracked = false;
+    }
+}
+// ─── End Image Tracking ───────────────────────────────────────────────────
         if (xrData.controllerA.updatedProfiles == 1 || xrData.controllerB.updatedProfiles == 1)
         {
           var inputProfiles = {};
