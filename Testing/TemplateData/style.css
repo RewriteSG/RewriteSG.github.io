@@ -17,7 +17,7 @@ body { padding: 0; margin: 0 }
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -300%);
+    transform: translate(-50%, -200%);
     width: 255px;
     height: 255px;
     background: url('unity-logo-dark.png') no-repeat center;
