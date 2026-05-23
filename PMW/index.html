@@ -99,7 +99,6 @@
     transition: opacity 0.15s, box-shadow 0.15s;
   }
   .list.dragging-list { opacity: 0.4; }
-  .list.list-drag-over { box-shadow: 0 0 0 2px var(--border-info); }
 
   .list-header {
     display: flex; align-items: center; gap: 6px;
@@ -143,8 +142,7 @@
   .card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.10); border-color: var(--border-mid); }
   .card:active { cursor: grabbing; }
   .card.dragging { opacity: 0.3; }
-  .card.over-top { border-top: 2.5px solid var(--border-info); }
-  .card.over-bottom { border-bottom: 2.5px solid var(--border-info); }
+  /* placeholder replaces over-top/over-bottom */
 
   .card-labels { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
   .label-pill {
@@ -683,8 +681,24 @@ function attachEvents() {
   attachDrag();
 }
 
+/* ── Placeholder helpers ── */
+function makeCardPlaceholder(height) {
+  const ph = document.createElement('div');
+  ph.id = 'card-ph';
+  ph.style.cssText = `height:${height}px;border-radius:var(--radius-md);background:var(--bg-info);border:1.5px dashed var(--border-info);opacity:0.75;flex-shrink:0;transition:height 0.1s;pointer-events:none;`;
+  return ph;
+}
+function makeListPlaceholder(width) {
+  const ph = document.createElement('div');
+  ph.id = 'list-ph';
+  ph.style.cssText = `width:${width}px;flex-shrink:0;border-radius:var(--radius-lg);background:var(--bg-info);border:1.5px dashed var(--border-info);opacity:0.6;min-height:80px;pointer-events:none;`;
+  return ph;
+}
+function removeCardPh() { document.getElementById('card-ph')?.remove(); }
+function removeListPh() { document.getElementById('list-ph')?.remove(); }
+
 function attachDrag() {
-  // Card drag
+  /* ── CARD DRAG ── */
   document.querySelectorAll('.card').forEach(el => {
     el.addEventListener('dragstart', e => {
       dragCard = el.dataset.cid;
@@ -694,48 +708,87 @@ function attachDrag() {
       e.dataTransfer.effectAllowed = 'move';
       setTimeout(() => el.classList.add('dragging'), 0);
     });
+
     el.addEventListener('dragend', () => {
       el.classList.remove('dragging');
+      removeCardPh();
       if (dragCard && hoverListId !== null) {
         moveCard(dragCard, dragCardListId, hoverListId, hoverCardIdx, hoverCardPos);
       }
       dragCard = null; hoverListId = null; hoverCardIdx = null; hoverCardPos = null;
       render();
     });
+
     el.addEventListener('dragover', e => {
-      if (!dragCard) return;
+      if (!dragCard || el.dataset.cid === dragCard) return;
       e.preventDefault(); e.stopPropagation();
       const rect = el.getBoundingClientRect();
-      hoverCardPos = e.clientY < rect.top + rect.height/2 ? 'top' : 'bottom';
+      const isTop = e.clientY < rect.top + rect.height / 2;
+      hoverCardPos = isTop ? 'top' : 'bottom';
       hoverCardIdx = +el.dataset.cidx;
       hoverListId = el.dataset.clid;
-      document.querySelectorAll('.card').forEach(c => c.classList.remove('over-top','over-bottom'));
-      el.classList.add(hoverCardPos==='top'?'over-top':'over-bottom');
+
+      // Place placeholder
+      removeCardPh();
+      const dragEl = document.querySelector(`[data-cid="${dragCard}"]`);
+      const ph = makeCardPlaceholder(dragEl ? dragEl.offsetHeight : 60);
+      if (isTop) el.parentNode.insertBefore(ph, el);
+      else el.parentNode.insertBefore(ph, el.nextSibling);
     });
   });
 
-  // Cards area drag over (empty list)
+  /* Cards-area dragover — handles empty lists & gaps between cards */
   document.querySelectorAll('.cards-area').forEach(area => {
     area.addEventListener('dragover', e => {
       if (!dragCard) return;
       e.preventDefault();
       const lid = area.dataset.cl;
-      const list = state.lists.find(l=>l.id===lid);
-      if (list && list.cards.length===0) { hoverListId = lid; hoverCardIdx = 0; hoverCardPos = 'top'; }
+      const list = state.lists.find(l => l.id === lid);
+      if (!list) return;
+
+      // If hovering the area itself (not a child card), append placeholder at bottom
+      if (e.target === area || e.target.id === 'card-ph') {
+        hoverListId = lid;
+        hoverCardIdx = list.cards.length;
+        hoverCardPos = 'bottom';
+        // Only insert ph if not already at end
+        const existing = document.getElementById('card-ph');
+        if (!existing || existing.parentNode !== area || existing.nextSibling !== null) {
+          removeCardPh();
+          const dragEl = document.querySelector(`[data-cid="${dragCard}"]`);
+          const ph = makeCardPlaceholder(dragEl ? dragEl.offsetHeight : 60);
+          area.appendChild(ph);
+        }
+      }
+    });
+
+    area.addEventListener('dragleave', e => {
+      // Only remove ph if leaving the area entirely
+      if (!area.contains(e.relatedTarget)) {
+        removeCardPh();
+        hoverListId = null;
+      }
     });
   });
 
-  // List drag
+  /* ── LIST DRAG ── */
+  let listDragWidth = 248;
+
   document.querySelectorAll('[data-list-drag]').forEach(header => {
     header.addEventListener('dragstart', e => {
       dragList = header.dataset.listDrag;
       dragCard = null;
       e.dataTransfer.effectAllowed = 'move';
-      setTimeout(() => header.closest('.list').classList.add('dragging-list'), 0);
+      const listEl = header.closest('.list');
+      listDragWidth = listEl.offsetWidth;
+      setTimeout(() => listEl.classList.add('dragging-list'), 0);
     });
+
     header.addEventListener('dragend', () => {
-      document.querySelectorAll('.list').forEach(l => l.classList.remove('dragging-list','list-drag-over'));
-      dragList = null; render();
+      removeListPh();
+      document.querySelectorAll('.list').forEach(l => l.classList.remove('dragging-list'));
+      dragList = null;
+      render();
     });
   });
 
@@ -744,15 +797,31 @@ function attachDrag() {
       if (!dragList) return;
       e.preventDefault();
       const tid = listEl.dataset.listId;
-      if (tid===dragList) return;
-      document.querySelectorAll('.list').forEach(l=>l.classList.remove('list-drag-over'));
-      listEl.classList.add('list-drag-over');
-      const fi = state.lists.findIndex(l=>l.id===dragList);
-      const ti = state.lists.findIndex(l=>l.id===tid);
-      if (fi<0||ti<0||fi===ti) return;
-      const [m] = state.lists.splice(fi,1);
-      state.lists.splice(ti,0,m);
+      if (tid === dragList) return;
+
+      const scroll = document.getElementById('boardScroll');
+      const rect = listEl.getBoundingClientRect();
+      const isLeftHalf = e.clientX < rect.left + rect.width / 2;
+
+      // Move placeholder in DOM
+      removeListPh();
+      const ph = makeListPlaceholder(listDragWidth);
+      if (isLeftHalf) scroll.insertBefore(ph, listEl);
+      else scroll.insertBefore(ph, listEl.nextSibling);
+
+      // Update state order
+      const fi = state.lists.findIndex(l => l.id === dragList);
+      const ti = state.lists.findIndex(l => l.id === tid);
+      if (fi < 0 || ti < 0 || fi === ti) return;
+      const [m] = state.lists.splice(fi, 1);
+      state.lists.splice(ti, 0, m);
     });
+  });
+
+  // Board scroll dragover — keep ph at end if dragging past all lists
+  document.getElementById('boardScroll').addEventListener('dragover', e => {
+    if (!dragList) return;
+    e.preventDefault();
   });
 }
 
